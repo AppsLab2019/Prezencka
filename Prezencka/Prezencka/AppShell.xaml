@@ -1,47 +1,47 @@
 ﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Prezencka"
-       x:Class="Prezencka.AppShell">
+       x:Class="Prezencka.AppShell"
+       BackgroundColor="#455A64"
+       ForegroundColor="White"
+       TitleColor="White"
+       DisabledColor="#B4FFFFFF"
+       UnselectedColor="#95FFFFFF"
+       >
 
     <TabBar>
-        <Tab Title="PDF"
-             Icon="pdf_export_icon.png">
+        <Tab 
+             Icon="test.png">
             <ShellContent>
-
+                <views:MainPage />
             </ShellContent>
         </Tab>
-        
-        <Tab Title="Table"
-             Icon="show_table_icon.png">
-            <ShellContent>
 
+        <Tab 
+             Icon="Logo2.png">
+            <ShellContent>
+                <views:MainPage />
             </ShellContent>
         </Tab>
-        
-        <Tab Title="Downloads"
-             Icon="downloads_icon.png">
-            <ShellContent>
 
-            </ShellContent>
-        </Tab>
-       
-        <Tab Title="PN"
-             Icon="PN_icon.png">
-            <ShellContent>
-
-            </ShellContent>
-        </Tab>
-        <Tab Title="Home"
+        <Tab 
              Icon="home_icon.png">
             <ShellContent>
                 <views:MainPage />
             </ShellContent>
         </Tab>
-       
-        <Tab Title="Settings"
+
+        <Tab 
+             Icon="PN_icon.png">
+            <ShellContent>
+                <views:MainPage />
+            </ShellContent>
+        </Tab>
+        
+        <Tab 
              Icon="settings_icon.png">
             <ShellContent>
-
+                <views:MainPage />
             </ShellContent>
         </Tab>
     </TabBar>

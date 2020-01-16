@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Prezencka.MainPage">
+             x:Class="Prezencka.MainPage"
+             Title="HLAVNÁ STRÁNKA">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -29,19 +29,45 @@
             Grid.Row="2" 
             Text="reminder"
             HorizontalOptions="Center"
-            FontSize="Header"/>
-        <Button 
-            Text="Tap"
-            Grid.Row="2"
-            WidthRequest="150"
-            Command="{Binding TapCommand}"
-            HorizontalOptions="Center"/>
+            FontSize="Small"/>
+
         <Button
-            Text="RESET"
+            Text="PRÍCHOD"
+            Grid.Row="3"
+            WidthRequest="220"
+            Command="{Binding TapCommand}"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+        <Button
+            Text="PRESTÁVKA"
             Grid.Row="4"
-            WidthRequest="80"
-            Command="{Binding ResetCommand}"
-            HorizontalOptions="End"/>
+            WidthRequest="220"
+            Command="{Binding TapCommand}"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+
+        <Button
+            Text="ODCHOD"
+            Grid.Row="5"
+            WidthRequest="220"
+            Command="{Binding TapCommand}"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+
+        <Button
+            Text="VLASTNÝ ČAS"
+            Grid.Row="6"
+            WidthRequest="220"
+            Command="{Binding TapCommand}"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+        <Image
+            Grid.Row="7"
+            HorizontalOptions="Center"
+            Source="Logo2.png"
+            HeightRequest="220"
+            WidthRequest="220"/>
+
     </Grid>
 
 </ContentPage>

@@ -13,7 +13,7 @@ namespace Prezencka
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public MainPage() 
         {
             InitializeComponent();
         }
