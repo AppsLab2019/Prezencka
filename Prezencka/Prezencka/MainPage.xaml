@@ -6,11 +6,42 @@
              mc:Ignorable="d"
              x:Class="Prezencka.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label
+            x:Name="clock_big"
+            Grid.Row="1" 
+            Text="Clock"
+            HorizontalOptions="Center"
+            FontSize="Header"/>
+        <Label
+            x:Name="reminder"
+            Grid.Row="2" 
+            Text="reminder"
+            HorizontalOptions="Center"
+            FontSize="Header"/>
+        <Button 
+            Text="Tap"
+            Grid.Row="2"
+            WidthRequest="150"
+            Command="{Binding TapCommand}"
+            HorizontalOptions="Center"/>
+        <Button
+            Text="RESET"
+            Grid.Row="4"
+            WidthRequest="80"
+            Command="{Binding ResetCommand}"
+            HorizontalOptions="End"/>
+    </Grid>
 
 </ContentPage>

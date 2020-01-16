@@ -1,0 +1,48 @@
+﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:Prezencka"
+       x:Class="Prezencka.AppShell">
+
+    <TabBar>
+        <Tab Title="PDF"
+             Icon="pdf_export_icon.png">
+            <ShellContent>
+
+            </ShellContent>
+        </Tab>
+        
+        <Tab Title="Table"
+             Icon="show_table_icon.png">
+            <ShellContent>
+
+            </ShellContent>
+        </Tab>
+        
+        <Tab Title="Downloads"
+             Icon="downloads_icon.png">
+            <ShellContent>
+
+            </ShellContent>
+        </Tab>
+       
+        <Tab Title="PN"
+             Icon="PN_icon.png">
+            <ShellContent>
+
+            </ShellContent>
+        </Tab>
+        <Tab Title="Home"
+             Icon="home_icon.png">
+            <ShellContent>
+                <views:MainPage />
+            </ShellContent>
+        </Tab>
+       
+        <Tab Title="Settings"
+             Icon="settings_icon.png">
+            <ShellContent>
+
+            </ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>
