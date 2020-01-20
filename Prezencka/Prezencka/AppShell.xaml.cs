@@ -12,7 +12,9 @@ namespace Prezencka
     {
         public AppShell()
         {
-            InitializeComponent();
+            
+            InitializeComponent(); 
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

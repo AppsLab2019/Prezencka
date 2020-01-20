@@ -5,11 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Prezencka.MainPage"
-             Title="HLAVNÁ STRÁNKA">
+             Shell.NavBarIsVisible="false">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25" />
+            <RowDefinition Height="20" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -64,7 +64,7 @@
         <Image
             Grid.Row="7"
             HorizontalOptions="Center"
-            Source="Logo2.png"
+            Source="logo_light.png"
             HeightRequest="220"
             WidthRequest="220"/>
 

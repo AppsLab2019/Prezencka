@@ -5749,7 +5749,7 @@ namespace Prezencka.Droid
 			public const int ic_mtrl_chip_close_circle = 2131165286;
 			
 			// aapt resource value: 0x7F070067
-			public const int Logo2 = 2131165287;
+			public const int logo_light = 2131165287;
 			
 			// aapt resource value: 0x7F070068
 			public const int mtrl_snackbar_background = 2131165288;
@@ -5809,13 +5809,10 @@ namespace Prezencka.Droid
 			public const int show_table_icon = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int test = 2131165307;
+			public const int tooltip_frame_dark = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int tooltip_frame_dark = 2131165308;
-			
-			// aapt resource value: 0x7F07007D
-			public const int tooltip_frame_light = 2131165309;
+			public const int tooltip_frame_light = 2131165308;
 			
 			static Drawable()
 			{
