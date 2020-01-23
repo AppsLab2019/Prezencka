@@ -5,8 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Prezencka.MainPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms"
              Shell.NavBarIsVisible="false">
-
+    
+    <syncfusion:SfPdfViewer x:Name="pdfViewerControl"/>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />

@@ -8,9 +8,9 @@
              Shell.NavBarIsVisible="false">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="THIS IS HOLIDAYS PAGE"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Generate Document" 
+                    Clicked="OnButtonClicked" 
+                    HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
