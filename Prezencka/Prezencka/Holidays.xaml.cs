@@ -18,7 +18,10 @@ namespace Prezencka
         public Holidays()
         {
             InitializeComponent();
+        }
 
+        public void OnButtonClicked(object sender, EventArgs args)
+        {
             // Create a new PDF document
             PdfDocument document = new PdfDocument();
 

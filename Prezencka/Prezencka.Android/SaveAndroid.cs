@@ -11,7 +11,7 @@ using Android.Support.V4.App;
 
 [assembly: Dependency(typeof(SaveAndroid))]
 
-class SaveAndroid : ISave
+public class SaveAndroid : ISave
 {
     //Method to save document as a file in Android and view the saved document
     public async Task SaveAndView(string fileName, String contentType, MemoryStream stream)
