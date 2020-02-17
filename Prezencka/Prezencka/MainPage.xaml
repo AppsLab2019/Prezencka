@@ -21,9 +21,9 @@
         <Label
             x:Name="clock_big"
             Grid.Row="1" 
-            Text="Clock"
+            Text="clock"
             HorizontalOptions="Center"
-            FontSize="Header"/>
+            FontSize="60"/>
         <Label
             x:Name="reminder"
             Grid.Row="2" 

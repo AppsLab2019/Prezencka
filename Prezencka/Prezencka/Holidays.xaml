@@ -8,9 +8,13 @@
              Shell.NavBarIsVisible="false">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Generate Document" 
-                    Clicked="OnButtonClicked" 
-                    HorizontalOptions="Center"/>
+            <Button
+            Text="PRIEPUSTKA"
+            Grid.Row="3"
+            WidthRequest="220"
+            Clicked="Priepustka"
+            HorizontalOptions="Center"
+            FontSize="30"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

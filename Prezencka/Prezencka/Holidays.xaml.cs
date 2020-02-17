@@ -9,6 +9,8 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Drawing;
 using System.IO;
+using Xamarin.Essentials;
+using System.Reflection;
 
 namespace Prezencka
 {
@@ -20,32 +22,28 @@ namespace Prezencka
             InitializeComponent();
         }
 
-        public void OnButtonClicked(object sender, EventArgs args)
+        Var Prezencka = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/Prezencka";
+        Directory.CreateDirectory(/storage/emulated/0/Android/data/Prezencka);
+
+        public class BrowserTest
         {
-            // Create a new PDF document
-            PdfDocument document = new PdfDocument();
+            /*public async Task<bool> OpenBrowser(Uri uri)
+            {
+               return await Browser.OpenAsync("/storage/emulated/0/priepustka.pdf", BrowserLaunchMode.SystemPreferred);
+            }*/
+        }
+        private void Priepustka(object sender, EventArgs e)
+        {
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Holidays)).Assembly;
+            var stream = assembly.GetManifestResourceStream
+                ("Prezencka.priepustka.pdf");
+            var memoryStream = new MemoryStream();
+            stream.CopyTo(memoryStream);
 
-            //Add a page to the document
-            PdfPage page = document.Pages.Add();
+            File.WriteAllBytes("/storage/emulated/0/Android/data/Prezencka/priepustka.pdf", memoryStream.ToArray());
 
-            //Create PDF graphics for the page
-            PdfGraphics graphics = page.Graphics;
-
-            //Set the standard font
-            PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
-
-            //Draw the text
-            graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
-
-            //Save the document to the stream
-            MemoryStream stream = new MemoryStream();
-            document.Save(stream);
-
-            //Close the document
-            document.Close(true);
-
-            //Save the stream as a file in the device and invoke it for viewing
-            Xamarin.Forms.DependencyService.Get<ISave>().SaveAndView("Output.pdf", "application / pdf", stream);
+            memoryStream.Close();
+            stream.Close();
         }
     }
 }

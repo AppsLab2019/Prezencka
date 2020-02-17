@@ -13,9 +13,18 @@ namespace Prezencka
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public MainPage() 
-        {  
+        public MainPage()
+        {
             InitializeComponent();
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                    clock_big.Text = DateTime.Now.ToString("hh:mm:ss"));
+
+                return true;
+            });
+
+
         }
     }
 }
