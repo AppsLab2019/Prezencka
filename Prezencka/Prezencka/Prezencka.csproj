@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <UserSecretsId>e7d87b46-713e-41e4-92dc-6f9241de652a</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -19,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Xamarin.Pdf" Version="17.4.0.44" />
+    <PackageReference Include="PDFjs" Version="2.0.943" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="17.4.0.50" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>

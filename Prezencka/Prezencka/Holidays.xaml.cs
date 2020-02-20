@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
-using Syncfusion.Drawing;
 using System.IO;
-using Xamarin.Essentials;
 using System.Reflection;
 
 namespace Prezencka
@@ -17,33 +9,29 @@ namespace Prezencka
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Holidays : ContentPage
     {
-        public Holidays()
-        {
+        public Holidays() => 
             InitializeComponent();
-        }
 
-        Var Prezencka = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/Prezencka";
-        Directory.CreateDirectory(/storage/emulated/0/Android/data/Prezencka);
 
-        public class BrowserTest
-        {
-            /*public async Task<bool> OpenBrowser(Uri uri)
-            {
-               return await Browser.OpenAsync("/storage/emulated/0/priepustka.pdf", BrowserLaunchMode.SystemPreferred);
-            }*/
-        }
         private void Priepustka(object sender, EventArgs e)
         {
+            Directory.CreateDirectory("/storage/emulated/0/Android/data/prezencka");
+
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Holidays)).Assembly;
             var stream = assembly.GetManifestResourceStream
                 ("Prezencka.priepustka.pdf");
+
             var memoryStream = new MemoryStream();
             stream.CopyTo(memoryStream);
 
-            File.WriteAllBytes("/storage/emulated/0/Android/data/Prezencka/priepustka.pdf", memoryStream.ToArray());
+            File.WriteAllBytes("/storage/emulated/0/Android/data/prezencka/priepustka.pdf", memoryStream.ToArray());
 
-            memoryStream.Close();
             stream.Close();
+
+            //await Browser.OpenAsync("https://docs.microsoft.com/en-us/xamarin/essentials/open-browser?tabs=android", BrowserLaunchMode.SystemPreferred);
+
+            PdfViewer.InputFileStream = memoryStream;
+            memoryStream.Close();
         }
     }
-}
+} 

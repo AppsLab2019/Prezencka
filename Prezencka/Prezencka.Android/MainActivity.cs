@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Support.V4.App;
 using Android;
+using Syncfusion.SfPdfViewer.XForms;
 
 namespace Prezencka.Droid
 {
@@ -23,6 +24,9 @@ namespace Prezencka.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            //Syncfusion.SfPdfViewer.XForms.Droid.SfPdfDocumentViewRenderer.Init();
+            
             LoadApplication(new App());
 
             ActivityCompat.RequestPermissions(this, new[] { Manifest.Permission.ReadExternalStorage, Manifest.Permission.WriteExternalStorage }, 1);
