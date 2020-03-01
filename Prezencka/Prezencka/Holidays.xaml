@@ -17,7 +17,7 @@
             HorizontalOptions="Center"
             FontSize="30"/>
 
-            <syncfusion:SfPdfViewer x:Name="PdfViewer"/>
+            <!--<syncfusion:SfPdfViewer x:Name="PdfViewer"/>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

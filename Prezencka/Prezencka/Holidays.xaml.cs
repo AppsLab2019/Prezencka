@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.IO;
 using System.Reflection;
+using Xamarin.Essentials;
 
 namespace Prezencka
 {
@@ -13,7 +14,7 @@ namespace Prezencka
             InitializeComponent();
 
 
-        private void Priepustka(object sender, EventArgs e)
+        private async void Priepustka(object sender, EventArgs e)
         {
             Directory.CreateDirectory("/storage/emulated/0/Android/data/prezencka");
 
@@ -28,9 +29,8 @@ namespace Prezencka
 
             stream.Close();
 
-            //await Browser.OpenAsync("https://docs.microsoft.com/en-us/xamarin/essentials/open-browser?tabs=android", BrowserLaunchMode.SystemPreferred);
+            await Browser.OpenAsync("https://mojpracovnycas.sk/download/priepustka.pdf", BrowserLaunchMode.SystemPreferred);
 
-            PdfViewer.InputFileStream = memoryStream;
             memoryStream.Close();
         }
     }
