@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +10,22 @@ namespace Prezencka
     {
         public Docs()
         {
-            InitializeComponent();
+            InitializeComponent();  
+        }
+
+        private async void Priepustka(object sender, EventArgs e)
+        {
+            await Browser.OpenAsync("https://mojpracovnycas.sk/download/priepustka.pdf", BrowserLaunchMode.SystemPreferred);
+        }
+
+        private async void Dovolenka(object sender, EventArgs e)
+        {
+            await Browser.OpenAsync("https://mojpracovnycas.sk/download/dovolenka.pdf", BrowserLaunchMode.SystemPreferred);
+        }
+
+        private async void Vykaz(object sender, EventArgs e)
+        {
+            await Browser.OpenAsync("https://mojpracovnycas.sk/download/pracovny_vykaz.pdf", BrowserLaunchMode.SystemPreferred);
         }
     }
 }

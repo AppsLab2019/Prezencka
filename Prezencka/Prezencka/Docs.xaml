@@ -6,11 +6,53 @@
              mc:Ignorable="d"
              x:Class="Prezencka.Docs"
              Shell.NavBarIsVisible="false">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="THERE ARE DOCS!!!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label
+            x:Name="online_info"
+            Grid.Row="2" 
+            Text="Pre stiahnutie nasledujúcich dokumentov,"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <Label
+            x:Name="online_info"
+            Grid.Row="3" 
+            Text="musíte mať prístup na internet!"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+        
+        <Button
+            Text="PRIEPUSTKA"
+            Grid.Row="4"
+            WidthRequest="220"
+            Clicked="Priepustka"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+
+        <Button
+            Text="DOVOLENKA"
+            Grid.Row="5"
+            WidthRequest="220"
+            Clicked="Dovolenka"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+
+        <Button
+            Text="PRACOVNÝ VÝKAZ"
+            Grid.Row="6"
+            WidthRequest="220"
+            Clicked="Vykaz"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+    </Grid>
 </ContentPage>
