@@ -9,12 +9,12 @@ namespace Prezencka
         public Holidays() => 
             InitializeComponent();
 
-        private void date_from_picker_DateSelected(object sender, DateChangedEventArgs e)
+        private void DateFromPicker(object sender, DateChangedEventArgs e)
         {
             Recalculate();
         }
 
-        private void date_to_picker_DateSelected(object sender, DateChangedEventArgs e)
+        private void DateToPicker(object sender, DateChangedEventArgs e)
         {
             Recalculate();
         }

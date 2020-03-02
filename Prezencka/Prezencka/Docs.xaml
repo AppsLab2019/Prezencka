@@ -35,7 +35,7 @@
             Text="PRIEPUSTKA"
             Grid.Row="2"
             WidthRequest="220"
-            Clicked="Priepustka"
+            Clicked="Ticket"
             HorizontalOptions="Center"
             FontSize="30"/>
 
@@ -43,15 +43,15 @@
             Text="DOVOLENKA"
             Grid.Row="3"
             WidthRequest="220"
-            Clicked="Dovolenka"
+            Clicked="Holiday"
             HorizontalOptions="Center"
             FontSize="30"/>
 
         <Button
-            Text="PRACOVNÝ VÝKAZ"
+            Text="PRÁZDNY PRACOVNÝ VÝKAZ"
             Grid.Row="4"
             WidthRequest="220"
-            Clicked="Vykaz"
+            Clicked="EmptyTimesheet"
             HorizontalOptions="Center"
             FontSize="30"/>
     </Grid>

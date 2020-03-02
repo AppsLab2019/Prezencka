@@ -17,6 +17,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Label
@@ -24,12 +25,14 @@
             Grid.Row="1" 
             Text="clock"
             HorizontalOptions="Center"
+            TextColor="Black"
             FontSize="60"/>
         <Label
             x:Name="reminder"
             Grid.Row="2" 
             Text="reminder"
             HorizontalOptions="Center"
+            TextColor="Black"
             FontSize="Small"/>
 
         <Button
@@ -56,21 +59,59 @@
             FontSize="30"/>
 
         <Label
-            Text="VLASTNÝ ČAS"
+            Text="VLASTNÝ ČAS:"
             Grid.Row="6"
             HorizontalOptions="Center"
+            TextColor="Black"
             FontSize="30"/>
         
-        <TimePicker
-            x:Name="own_time"
-            Grid.Row="7" 
-            Format="MM:HH"
+        <Label
+            Text="PRÍCHOD"
+            Grid.Row="7"
+            Margin="20"
+            TextColor="Black"
+            FontSize="15"/>
+
+        <Label
+            Text="PRESTÁVKA"
+            Grid.Row="7"
             HorizontalOptions="Center"
-            PropertyChanged="own_time_changed"
-            FontSize="30"/>
-        
+            TextColor="Black"
+            FontSize="15"/>
+
+        <Label
+            Text="ODCHOD"
+            Grid.Row="7"
+            HorizontalOptions="End"
+            TextColor="Black"
+            FontSize="15"/>
+
+        <TimePicker
+            x:Name="own_time_Arrive"
+            Grid.Row="8" 
+            Format="mm:hh"
+            HorizontalOptions="Start"
+            PropertyChanged="OwnTimeChangedArrive"
+            FontSize="20"/>
+
+        <TimePicker
+            x:Name="own_time_rest"
+            Grid.Row="8" 
+            Format="mm:hh"
+            HorizontalOptions="Center"
+            PropertyChanged="OwnTimeChangedRest"
+            FontSize="20"/>
+
+        <TimePicker
+            x:Name="own_time_leave"
+            Grid.Row="8" 
+            Format="mm:hh"
+            HorizontalOptions="End"
+            PropertyChanged="OwnTimeChangedLeave"
+            FontSize="20"/>
+
         <Image
-            Grid.Row="8"
+            Grid.Row="9"
             HorizontalOptions="Center"
             Source="logo_relecon.png"
             HeightRequest="220"

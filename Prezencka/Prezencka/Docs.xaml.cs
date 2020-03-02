@@ -13,17 +13,17 @@ namespace Prezencka
             InitializeComponent();  
         }
 
-        private async void Priepustka(object sender, EventArgs e)
+        private async void Ticket(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://mojpracovnycas.sk/download/priepustka.pdf", BrowserLaunchMode.SystemPreferred);
         }
 
-        private async void Dovolenka(object sender, EventArgs e)
+        private async void Holiday(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://mojpracovnycas.sk/download/dovolenka.pdf", BrowserLaunchMode.SystemPreferred);
         }
 
-        private async void Vykaz(object sender, EventArgs e)
+        private async void EmptyTimesheet(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://mojpracovnycas.sk/download/pracovny_vykaz.pdf", BrowserLaunchMode.SystemPreferred);
         }

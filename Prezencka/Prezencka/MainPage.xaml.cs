@@ -27,7 +27,17 @@ namespace Prezencka
 
         }
 
-        private void own_time_changed(object sender, PropertyChangedEventArgs e)
+        private void OwnTimeChangedArrive(object sender, PropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void OwnTimeChangedRest(object sender, PropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void OwnTimeChangedLeave(object sender, PropertyChangedEventArgs e)
         {
 
         }
