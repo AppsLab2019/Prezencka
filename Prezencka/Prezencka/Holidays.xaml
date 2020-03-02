@@ -6,10 +6,75 @@
              mc:Ignorable="d"
              x:Class="Prezencka.Holidays"
              Shell.NavBarIsVisible="false">
-    <ContentPage.Content>
-        <StackLayout>
-           
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-        </StackLayout>
-    </ContentPage.Content>
+        <Label
+            x:Name="date_info0"
+            Grid.Row="0" 
+            Text="Dovolenka sa automaticky vyplní do"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <Label
+            x:Name="date_info1"
+            Grid.Row="1" 
+            Text="pracovného výkazu"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <Label
+            x:Name="date_from"
+            Grid.Row="3" 
+            Text="Dátum od:"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+        
+        <Label
+            x:Name="date_to"
+            Grid.Row="5" 
+            Text="Dátum do:"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+        
+        <DatePicker
+            x:Name="date_from_picker"
+            Grid.Row="4" 
+            Format="dd:MM:yyyy"
+            MinimumDate="1/1/2020"
+            MaximumDate="1/1/2100"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <DatePicker
+            x:Name="date_to_picker"
+            Grid.Row="6" 
+            Format="dd:MM:yyyy"
+            MinimumDate="1/1/2020"
+            MaximumDate="1/1/2100"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+        
+        <Image
+            Grid.Row="7"
+            HorizontalOptions="Center"
+            Source="logo_relecon.png"
+            HeightRequest="220"
+            WidthRequest="220"/>
+
+    </Grid>
 </ContentPage>

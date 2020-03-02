@@ -12,14 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="priepustka.pdf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="priepustka.pdf" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="PDFjs" Version="2.0.943" />
     <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="17.4.0.50" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />

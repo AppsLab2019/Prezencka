@@ -8,8 +8,6 @@
              Shell.NavBarIsVisible="false">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -19,21 +17,23 @@
         </Grid.RowDefinitions>
         <Label
             x:Name="online_info"
-            Grid.Row="2" 
+            Grid.Row="0" 
             Text="Pre stiahnutie nasledujúcich dokumentov,"
+            TextColor="Black"
             HorizontalOptions="Center"
             FontSize="20"/>
 
         <Label
-            x:Name="online_info"
-            Grid.Row="3" 
+            x:Name="online_info1"
+            Grid.Row="1" 
             Text="musíte mať prístup na internet!"
+            TextColor="Black"
             HorizontalOptions="Center"
             FontSize="20"/>
         
         <Button
             Text="PRIEPUSTKA"
-            Grid.Row="4"
+            Grid.Row="2"
             WidthRequest="220"
             Clicked="Priepustka"
             HorizontalOptions="Center"
@@ -41,7 +41,7 @@
 
         <Button
             Text="DOVOLENKA"
-            Grid.Row="5"
+            Grid.Row="3"
             WidthRequest="220"
             Clicked="Dovolenka"
             HorizontalOptions="Center"
@@ -49,7 +49,7 @@
 
         <Button
             Text="PRACOVNÝ VÝKAZ"
-            Grid.Row="6"
+            Grid.Row="4"
             WidthRequest="220"
             Clicked="Vykaz"
             HorizontalOptions="Center"
