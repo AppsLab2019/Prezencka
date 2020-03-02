@@ -26,5 +26,10 @@ namespace Prezencka
 
 
         }
+
+        private void own_time_changed(object sender, PropertyChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,6 +16,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Label
@@ -54,15 +55,22 @@
             HorizontalOptions="Center"
             FontSize="30"/>
 
-        <Button
+        <Label
             Text="VLASTNÝ ČAS"
             Grid.Row="6"
-            WidthRequest="220"
-            Command="{Binding TapCommand}"
             HorizontalOptions="Center"
             FontSize="30"/>
+        
+        <TimePicker
+            x:Name="own_time"
+            Grid.Row="7" 
+            Format="MM:HH"
+            HorizontalOptions="Center"
+            PropertyChanged="own_time_changed"
+            FontSize="30"/>
+        
         <Image
-            Grid.Row="7"
+            Grid.Row="8"
             HorizontalOptions="Center"
             Source="logo_relecon.png"
             HeightRequest="220"

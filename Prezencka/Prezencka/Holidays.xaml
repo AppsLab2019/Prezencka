@@ -50,7 +50,7 @@
             TextColor="Black"
             HorizontalOptions="Center"
             FontSize="20"/>
-        
+
         <DatePicker
             x:Name="date_from_picker"
             Grid.Row="4" 
@@ -58,6 +58,7 @@
             MinimumDate="1/1/2020"
             MaximumDate="1/1/2100"
             HorizontalOptions="Center"
+            DateSelected="date_from_picker_DateSelected"
             FontSize="20"/>
 
         <DatePicker
@@ -67,6 +68,7 @@
             MinimumDate="1/1/2020"
             MaximumDate="1/1/2100"
             HorizontalOptions="Center"
+            DateSelected="date_to_picker_DateSelected"
             FontSize="20"/>
         
         <Image
