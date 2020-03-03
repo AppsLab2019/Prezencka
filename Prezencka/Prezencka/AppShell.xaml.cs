@@ -13,7 +13,10 @@ namespace Prezencka
         public AppShell()
         {
             
-            InitializeComponent(); 
+            InitializeComponent();
+
+            rootBar.CurrentItem = rootBar.Items[2];
+
             NavigationPage.SetHasNavigationBar(this, false);
         }
     }

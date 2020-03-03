@@ -8,37 +8,43 @@
        DisabledColor="Black"
        UnselectedColor="White">
 
-    <TabBar>
+    <TabBar x:Name="rootBar">
+
         <Tab Title="table"
-             Icon="show_table_icon.png">
+             Icon="show_table_icon.png"
+             TabIndex="0">
             <ShellContent>
                 <views:Table />
             </ShellContent>
         </Tab>
 
         <Tab Title="Docs"
-             Icon="pdf_export_icon.png">
+             Icon="pdf_export_icon.png"
+             TabIndex="1">
             <ShellContent>
                 <views:Docs />
             </ShellContent>
         </Tab>
 
         <Tab Title="Home"
-             Icon="home_icon.png">
+             Icon="home_icon.png"
+             TabIndex="2">
             <ShellContent>
                 <views:MainPage />
             </ShellContent>
         </Tab>
 
         <Tab Title="Holidays"
-             Icon="PN_icon.png">
+             Icon="PN_icon.png"
+             TabIndex="3">
             <ShellContent>
                 <views:Holidays />
             </ShellContent>
         </Tab>
         
         <Tab Title="Settings"
-             Icon="settings_icon.png">
+             Icon="settings_icon.png"
+             TabIndex="4">
             <ShellContent>
                 <views:Settings />
             </ShellContent>

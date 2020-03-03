@@ -6,6 +6,8 @@
              mc:Ignorable="d"
              x:Class="Prezencka.MainPage"
              Shell.NavBarIsVisible="false">
+    
+
 
     <Grid>
         <Grid.RowDefinitions>
@@ -20,6 +22,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        
         <Label
             x:Name="clock_big"
             Grid.Row="1" 
@@ -39,14 +42,14 @@
             Text="PRÍCHOD"
             Grid.Row="3"
             WidthRequest="220"
-            Command="{Binding TapCommand}"
+            Clicked="ArriveButt"
             HorizontalOptions="Center"
             FontSize="30"/>
         <Button
             Text="PRESTÁVKA"
             Grid.Row="4"
             WidthRequest="220"
-            Command="{Binding TapCommand}"
+            Clicked="RestButt"
             HorizontalOptions="Center"
             FontSize="30"/>
 
@@ -54,7 +57,7 @@
             Text="ODCHOD"
             Grid.Row="5"
             WidthRequest="220"
-            Command="{Binding TapCommand}"
+            Clicked="LeaveButt"
             HorizontalOptions="Center"
             FontSize="30"/>
 
@@ -68,7 +71,8 @@
         <Label
             Text="PRÍCHOD"
             Grid.Row="7"
-            Margin="20"
+            HorizontalOptions="Start"
+            Margin="37, 0"
             TextColor="Black"
             FontSize="15"/>
 
@@ -83,21 +87,23 @@
             Text="ODCHOD"
             Grid.Row="7"
             HorizontalOptions="End"
+            Margin="37, 0"
             TextColor="Black"
             FontSize="15"/>
 
         <TimePicker
             x:Name="own_time_Arrive"
             Grid.Row="8" 
-            Format="mm:hh"
+            Format="hh:mm"
             HorizontalOptions="Start"
+            Margin="37, 0"
             PropertyChanged="OwnTimeChangedArrive"
             FontSize="20"/>
 
         <TimePicker
             x:Name="own_time_rest"
             Grid.Row="8" 
-            Format="mm:hh"
+            Format="hh:mm"
             HorizontalOptions="Center"
             PropertyChanged="OwnTimeChangedRest"
             FontSize="20"/>
@@ -105,8 +111,9 @@
         <TimePicker
             x:Name="own_time_leave"
             Grid.Row="8" 
-            Format="mm:hh"
+            Format="hh:mm"
             HorizontalOptions="End"
+            Margin="37, 0"
             PropertyChanged="OwnTimeChangedLeave"
             FontSize="20"/>
 
@@ -118,5 +125,4 @@
             WidthRequest="220"/>
 
     </Grid>
-
 </ContentPage>

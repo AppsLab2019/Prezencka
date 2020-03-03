@@ -15,7 +15,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -35,44 +34,57 @@
             HorizontalOptions="Center"
             FontSize="20"/>
 
+
+        <Label
+            x:Name="days_error_label"
+            Grid.Row="3" 
+            Text=""
+            TextColor="Red"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
         <Label
             x:Name="date_from"
-            Grid.Row="3" 
+            Grid.Row="4" 
             Text="Dátum od:"
             TextColor="Black"
-            HorizontalOptions="Center"
+            HorizontalOptions="Start"
+            Margin="57, 0"
             FontSize="20"/>
         
         <Label
             x:Name="date_to"
-            Grid.Row="5" 
+            Grid.Row="4" 
             Text="Dátum do:"
             TextColor="Black"
-            HorizontalOptions="Center"
+            HorizontalOptions="End"
+            Margin="57, 0"
             FontSize="20"/>
 
         <DatePicker
             x:Name="date_from_picker"
-            Grid.Row="4" 
+            Grid.Row="5" 
             Format="dd:MM:yyyy"
             MinimumDate="1/1/2020"
             MaximumDate="1/1/2100"
-            HorizontalOptions="Center"
+            HorizontalOptions="Start"
+            Margin="50, 0"
             DateSelected="DateFromPicker"
             FontSize="20"/>
 
         <DatePicker
             x:Name="date_to_picker"
-            Grid.Row="6" 
+            Grid.Row="5" 
             Format="dd:MM:yyyy"
             MinimumDate="1/1/2020"
             MaximumDate="1/1/2100"
-            HorizontalOptions="Center"
+            HorizontalOptions="End"
+            Margin="50, 0"
             DateSelected="DateToPicker"
             FontSize="20"/>
-        
+
         <Image
-            Grid.Row="7"
+            Grid.Row="6"
             HorizontalOptions="Center"
             Source="logo_relecon.png"
             HeightRequest="220"
