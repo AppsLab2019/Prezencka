@@ -98,7 +98,6 @@
             Format="hh:mm"
             HorizontalOptions="Start"
             Margin="20, 0"
-            PropertyChanged="OwnTimeChangedArrive"
             FontSize="20"/>
 
         <TimePicker
@@ -107,7 +106,6 @@
             Format="hh:mm"
             HorizontalOptions="Start"
             Margin="130, 0"
-            PropertyChanged="OwnTimeChangedRestStart"
             FontSize="20"/>
 
         <TimePicker
@@ -116,7 +114,6 @@
             Format="hh:mm"
             HorizontalOptions="End"
             Margin="130, 0"
-            PropertyChanged="OwnTimeChangedRestStart"
             FontSize="20"/>
 
         <TimePicker
@@ -125,7 +122,6 @@
             Format="hh:mm"
             HorizontalOptions="End"
             Margin="20, 0"
-            PropertyChanged="OwnTimeChangedLeave"
             FontSize="20"/>
 
         <Image
