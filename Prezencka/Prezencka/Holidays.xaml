@@ -82,6 +82,15 @@
             Margin="50, 0"
             DateSelected="DateToPicker"
             FontSize="20"/>
+        
+        <Button
+            Grid.ColumnSpan="6"
+            Text="POTVRDIŤ"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            TextColor="Black"
+            Clicked="Button_Clicked"
+            FontSize="30"/>
 
         <Image
             Grid.Row="6"

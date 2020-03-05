@@ -58,7 +58,8 @@
             HorizontalOptions="Center"
             FontSize="30"/>
 
-        <Grid Grid.Row="5">
+        <Grid 
+            Grid.Row="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -73,12 +74,13 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             
-            <Label
+            <Button
                 Grid.ColumnSpan="4"
                 Text="VLASTNÝ ČAS"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 TextColor="Black"
+                Clicked="OnConfirm"
                 FontSize="30"/>
             
             <Label
@@ -94,7 +96,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                Text="Prestávka"
+                Text="PRESTÁVKA"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 TextColor="Black"
@@ -103,7 +105,7 @@
             <Label
                 Grid.Row="2"
                 Grid.Column="1"
-                Text="Začiatok"
+                Text="ZAČIATOK"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 TextColor="Black"
@@ -112,7 +114,7 @@
             <Label
                 Grid.Row="2"
                 Grid.Column="2"
-                Text="Koniec"
+                Text="KONIEC"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 TextColor="Black"
@@ -121,7 +123,7 @@
             <Label
                 Grid.Row="2"
                 Grid.Column="3"
-                Text="Odchod"
+                Text="ODCHOD"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 TextColor="Black"

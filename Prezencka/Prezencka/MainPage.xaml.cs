@@ -37,7 +37,7 @@ namespace Prezencka
         
         private async void OnConfirm(object sender, EventArgs e)
         {
-            if (!IsTimeValid())
+            if (!IsTimeValid(sender, e))
             {
                 await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "OK");
                 return;
@@ -46,9 +46,9 @@ namespace Prezencka
             // kód PDF
         }
 
-        private bool IsTimeValid()
+        private bool IsTimeValid(object sender, EventArgs e)
         {
-            return ArriveTime.Time < EndTime.Time
+            return ArriveTime.Time < RestEndTime.Time
                 && ArriveTime.Time < RestStartTime.Time
                 && ArriveTime.Time < RestEndTime.Time;
         }

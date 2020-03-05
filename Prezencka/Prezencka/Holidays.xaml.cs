@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Diagnostics;
+using System;
 
 namespace Prezencka
 {
@@ -10,27 +11,19 @@ namespace Prezencka
         public Holidays() => 
             InitializeComponent();
 
-        private void DateFromPicker(object sender, DateChangedEventArgs e)
+        private async void OnConfirm(object sender, System.EventArgs e)
         {
-            Recalculate();
-        }
-
-        private void DateToPicker(object sender, DateChangedEventArgs e)
-        {
-            Recalculate();
-        }
-
-        private async void Recalculate()
-        {
-            if (date_to_picker.Date < date_from_picker.Date)
+            if (!IsDateValid(sender, e))
             {
-                bool answer = await DisplayAlert("CHYBA", "Vami zadaný dátum nie je správny.", "", "OK");
-                Debug.WriteLine("Answer: " + answer);
-            }
-            else
-            {
+                await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "OK");
                 return;
             }
+
+            // kód PDF
+        }
+        private bool IsDateValid(object sender, EventArgs e)
+        {
+            return date_to_picker.Date < date_from_picker.Date;
         }
     }
 } 
