@@ -5,10 +5,7 @@ using Xamarin.Forms;
 
 namespace Prezencka
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    public partial class MainPage
     {
         public MainPage()
         {
@@ -21,61 +18,39 @@ namespace Prezencka
 
                 return true;
             });
-
-
         }
 
         private async void ArriveButt(object sender, EventArgs e)
         {
-            bool answer = await DisplayAlert("PRÍCHOD ZAZNAMENANÝ","Váš príchod bol úspešne zaznamenaný do pracovného výkazu.","", "OK");
-            Debug.WriteLine("Answer: " + answer);
+            await DisplayAlert("PRÍCHOD ZAZNAMENANÝ","Váš príchod bol úspešne zaznamenaný do pracovného výkazu.", "OK");
         }
 
         private async void RestButt(object sender, EventArgs e)
         {
-            bool answer = await DisplayAlert("PRESTÁVKA ZAZNAMENANÁ", "Vaša prestávka bola úspešne zaznamenaná do pracovného výkazu.", "", "OK");
-            Debug.WriteLine("Answer: " + answer);
+            await DisplayAlert("PRESTÁVKA ZAZNAMENANÁ", "Vaša prestávka bola úspešne zaznamenaná do pracovného výkazu.", "OK");
         }
 
         private async void LeaveButt(object sender, EventArgs e)
         {
-            bool answer = await DisplayAlert("ODCHOD ZAZNAMENANÝ", "Váš odchod bol úspešne zaznamenaný do pracovného výkazu.", "", "OK");
-            Debug.WriteLine("Answer: " + answer);
+            await DisplayAlert("ODCHOD ZAZNAMENANÝ", "Váš odchod bol úspešne zaznamenaný do pracovného výkazu.", "OK");
         }
         
-        //----------
-        private void OwnTimeChangedArrive(object sender, PropertyChangedEventArgs e)
+        private async void OnConfirm(object sender, EventArgs e)
         {
-            Recalculate();
-        }
-
-        private void OwnTimeChangedRestStart(object sender, PropertyChangedEventArgs e)
-        {
-            Recalculate();
-        }
-
-        private void OwnTimeChangedRestEnd(object sender, PropertyChangedEventArgs e)
-        {
-            Recalculate();
-        }
-
-        private void OwnTimeChangedLeave(object sender, PropertyChangedEventArgs e)
-        {
-            Recalculate();
-        }
-
-        private async void Recalculate()
-        {
-            if (own_time_arrive.Time > own_time_rest_start.Time && own_time_arrive.Time > own_time_rest_end.Time && own_time_arrive.Time > own_time_leave.Time)
+            if (!IsTimeValid())
             {
-                bool answer = await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "", "OK");
-                Debug.WriteLine("Answer: " + answer);
-            }
-
-            else
-            {
+                await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "OK");
                 return;
             }
+            
+            // kód PDF
+        }
+
+        private bool IsTimeValid()
+        {
+            return ArriveTime.Time < EndTime.Time
+                && ArriveTime.Time < RestStartTime.Time
+                && ArriveTime.Time < RestEndTime.Time;
         }
     }
 }
