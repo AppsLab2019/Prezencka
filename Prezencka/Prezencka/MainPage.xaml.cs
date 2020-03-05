@@ -49,7 +49,12 @@ namespace Prezencka
             Recalculate();
         }
 
-        private void OwnTimeChangedRest(object sender, PropertyChangedEventArgs e)
+        private void OwnTimeChangedRestStart(object sender, PropertyChangedEventArgs e)
+        {
+            Recalculate();
+        }
+
+        private void OwnTimeChangedRestEnd(object sender, PropertyChangedEventArgs e)
         {
             Recalculate();
         }
@@ -61,19 +66,7 @@ namespace Prezencka
 
         private async void Recalculate()
         {
-            if (own_time_Arrive.Time > own_time_rest.Time)
-            {
-                bool answer = await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "", "OK");
-                Debug.WriteLine("Answer: " + answer);
-            }
-
-            else if (own_time_Arrive.Time > own_time_leave.Time)
-            {
-                bool answer = await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "", "OK");
-                Debug.WriteLine("Answer: " + answer);
-            }
-
-            else if (own_time_rest.Time > own_time_leave.Time)
+            if (own_time_arrive.Time > own_time_rest_start.Time && own_time_arrive.Time > own_time_rest_end.Time && own_time_arrive.Time > own_time_leave.Time)
             {
                 bool answer = await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "", "OK");
                 Debug.WriteLine("Answer: " + answer);

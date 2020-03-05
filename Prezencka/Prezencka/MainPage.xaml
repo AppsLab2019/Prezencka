@@ -67,45 +67,56 @@
             HorizontalOptions="Center"
             TextColor="Black"
             FontSize="30"/>
-        
+
         <Label
             Text="PRÍCHOD"
             Grid.Row="7"
             HorizontalOptions="Start"
-            Margin="37, 0"
+            Margin="15, 0"
             TextColor="Black"
             FontSize="15"/>
 
         <Label
-            Text="PRESTÁVKA"
+            Text="PRESTÁVKA ZAČIATOK - KONIEC"
             Grid.Row="7"
-            HorizontalOptions="Center"
+            HorizontalOptions="End"
             TextColor="Black"
+            Margin="95, 0"
             FontSize="15"/>
 
         <Label
             Text="ODCHOD"
             Grid.Row="7"
             HorizontalOptions="End"
-            Margin="37, 0"
+            Margin="15, 0"
             TextColor="Black"
             FontSize="15"/>
 
         <TimePicker
-            x:Name="own_time_Arrive"
+            x:Name="own_time_arrive"
             Grid.Row="8" 
             Format="hh:mm"
             HorizontalOptions="Start"
-            Margin="37, 0"
+            Margin="20, 0"
             PropertyChanged="OwnTimeChangedArrive"
             FontSize="20"/>
 
         <TimePicker
-            x:Name="own_time_rest"
+            x:Name="own_time_rest_start"
             Grid.Row="8" 
             Format="hh:mm"
-            HorizontalOptions="Center"
-            PropertyChanged="OwnTimeChangedRest"
+            HorizontalOptions="Start"
+            Margin="130, 0"
+            PropertyChanged="OwnTimeChangedRestStart"
+            FontSize="20"/>
+
+        <TimePicker
+            x:Name="own_time_rest_end"
+            Grid.Row="8" 
+            Format="hh:mm"
+            HorizontalOptions="End"
+            Margin="130, 0"
+            PropertyChanged="OwnTimeChangedRestStart"
             FontSize="20"/>
 
         <TimePicker
@@ -113,7 +124,7 @@
             Grid.Row="8" 
             Format="hh:mm"
             HorizontalOptions="End"
-            Margin="37, 0"
+            Margin="20, 0"
             PropertyChanged="OwnTimeChangedLeave"
             FontSize="20"/>
 
