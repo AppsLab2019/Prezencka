@@ -93,7 +93,7 @@
             FontSize="15"/>
 
         <TimePicker
-            x:Name="own_time_arrive"
+            x:Name="ArriveTime"
             Grid.Row="8" 
             Format="hh:mm"
             HorizontalOptions="Start"
@@ -101,7 +101,7 @@
             FontSize="20"/>
 
         <TimePicker
-            x:Name="own_time_rest_start"
+            x:Name="RestStartTime"
             Grid.Row="8" 
             Format="hh:mm"
             HorizontalOptions="Start"
@@ -109,7 +109,7 @@
             FontSize="20"/>
 
         <TimePicker
-            x:Name="own_time_rest_end"
+            x:Name="RestEndTime"
             Grid.Row="8" 
             Format="hh:mm"
             HorizontalOptions="End"
@@ -117,7 +117,7 @@
             FontSize="20"/>
 
         <TimePicker
-            x:Name="own_time_leave"
+            x:Name="LeaveTime"
             Grid.Row="8" 
             Format="hh:mm"
             HorizontalOptions="End"
