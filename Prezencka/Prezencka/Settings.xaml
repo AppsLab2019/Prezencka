@@ -5,12 +5,49 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Prezencka.Settings"
-             Shell.NavBarIsVisible="false">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="THERE ARE APP SETTINGS!!!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             Shell.NavBarIsVisible="True"
+             Title="NASTAVENIA">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TableView 
+            x:Name="settings"
+            Grid.Row="0">
+            <TableRoot>
+                <TableSection
+                    Title="OSOBNÉ INFORMÁCIE"
+                    TextColor="Black">
+                    <EntryCell
+                            x:Name="name"
+                            Label="Meno Priezvisko"
+                            HorizontalTextAlignment="Center"
+                            Keyboard="Text"
+                            Placeholder="Jožko Mrkvička"
+                            LabelColor="Black"/>
+                    <EntryCell 
+                            x:Name="personal_number"
+                            Label="Osobné číslo" 
+                            HorizontalTextAlignment="End"
+                            Placeholder="007"
+                            LabelColor="Black"/>
+                    <EntryCell 
+                            x:Name="company"
+                            Label="Firma" 
+                            HorizontalTextAlignment="End"
+                            Placeholder="Firma a.s."
+                            LabelColor="Black"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </Grid>
 </ContentPage>
+    

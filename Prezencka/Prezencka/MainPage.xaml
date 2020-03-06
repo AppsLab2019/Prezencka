@@ -9,17 +9,18 @@
     
 
 
-    <Grid Padding="20">
-         <Grid.RowDefinitions>
+    <Grid 
+        Padding="20">
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Label
             x:Name="clock_big"
             Text="clock"
@@ -79,6 +80,7 @@
                 Text="VLASTNÝ ČAS"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
+                WidthRequest="220"
                 TextColor="Black"
                 Clicked="OnConfirm"
                 FontSize="30"/>
@@ -121,8 +123,9 @@
                 FontSize="15"/>
             
             <Label
-                Grid.Row="2"
+                Grid.Row="1"
                 Grid.Column="3"
+                Grid.RowSpan="2"
                 Text="ODCHOD"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -132,7 +135,7 @@
             <TimePicker
                 x:Name="ArriveTime"
                 Grid.Row="3" 
-                Format="hh:mm"
+                Format="HH:mm"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 FontSize="20"/>
@@ -141,7 +144,7 @@
                 x:Name="RestStartTime"
                 Grid.Row="3"
                 Grid.Column="1"
-                Format="hh:mm"
+                Format="HH:mm"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 FontSize="20"/>
@@ -150,7 +153,7 @@
                 x:Name="RestEndTime"
                 Grid.Row="3"
                 Grid.Column="2"
-                Format="hh:mm"
+                Format="HH:mm"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 FontSize="20"/>
@@ -159,7 +162,7 @@
                 x:Name="LeaveTime"
                 Grid.Row="3"
                 Grid.Column="3"
-                Format="hh:mm"
+                Format="HH:mm"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 FontSize="20"/>

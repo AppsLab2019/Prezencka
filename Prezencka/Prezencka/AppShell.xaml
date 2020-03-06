@@ -10,7 +10,7 @@
 
     <TabBar x:Name="rootBar">
 
-        <Tab Title="table"
+        <Tab Title="Tabuľka"
              Icon="show_table_icon.png"
              TabIndex="0">
             <ShellContent>
@@ -18,7 +18,7 @@
             </ShellContent>
         </Tab>
 
-        <Tab Title="Docs"
+        <Tab Title="Dokumenty"
              Icon="pdf_export_icon.png"
              TabIndex="1">
             <ShellContent>
@@ -26,7 +26,7 @@
             </ShellContent>
         </Tab>
 
-        <Tab Title="Home"
+        <Tab Title="Domov"
              Icon="home_icon.png"
              TabIndex="2">
             <ShellContent>
@@ -34,7 +34,7 @@
             </ShellContent>
         </Tab>
 
-        <Tab Title="Holidays"
+        <Tab Title="Absencia"
              Icon="PN_icon.png"
              TabIndex="3">
             <ShellContent>
@@ -42,7 +42,7 @@
             </ShellContent>
         </Tab>
         
-        <Tab Title="Settings"
+        <Tab Title="Nastavenia"
              Icon="settings_icon.png"
              TabIndex="4">
             <ShellContent>

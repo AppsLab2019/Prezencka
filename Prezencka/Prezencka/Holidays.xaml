@@ -5,12 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Prezencka.Holidays"
-             Shell.NavBarIsVisible="false">
-    <Grid>
+             Shell.NavBarIsVisible="True"
+             Title="ABSENCIA">
+    <Grid
+        Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -21,7 +23,7 @@
         <Label
             x:Name="date_info0"
             Grid.Row="0" 
-            Text="Dovolenka sa automaticky vyplní do"
+            Text="Dátum sa automaticky vyplní do"
             TextColor="Black"
             HorizontalOptions="Center"
             FontSize="20"/>
@@ -31,15 +33,6 @@
             Grid.Row="1" 
             Text="pracovného výkazu"
             TextColor="Black"
-            HorizontalOptions="Center"
-            FontSize="20"/>
-
-
-        <Label
-            x:Name="days_error_label"
-            Grid.Row="3" 
-            Text=""
-            TextColor="Red"
             HorizontalOptions="Center"
             FontSize="20"/>
 
@@ -84,16 +77,25 @@
             FontSize="20"/>
         
         <Button
-            Grid.ColumnSpan="6"
+            Grid.Row="6"
             Text="POTVRDIŤ"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            Margin="30, 0"
             TextColor="Black"
-            Clicked="Button_Clicked"
+            Clicked="OnConfirm"
+            FontSize="30"/>
+
+        <Button
+            Grid.Row="6"
+            Text="ZRUŠIŤ"
+            HorizontalOptions="End"
+            Margin="30, 0"
+            TextColor="Black"
+            Clicked="OnCancel"
             FontSize="30"/>
 
         <Image
-            Grid.Row="6"
+            Grid.Row="7"
             HorizontalOptions="Center"
             Source="logo_relecon.png"
             HeightRequest="220"

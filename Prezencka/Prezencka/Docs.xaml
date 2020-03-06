@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Prezencka.Docs"
-             Shell.NavBarIsVisible="false">
+             Shell.NavBarIsVisible="True"
+             Title="DOKUMENTY NA STIAHNUTIE">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -15,6 +16,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        
         <Label
             x:Name="online_info"
             Grid.Row="0" 
@@ -51,7 +53,7 @@
             Text="PRÁZDNY PRACOVNÝ VÝKAZ"
             Grid.Row="4"
             WidthRequest="220"
-            Clicked="EmptyTimesheet"
+            Clicked="EmptyTimeSheet"
             HorizontalOptions="Center"
             FontSize="30"/>
     </Grid>

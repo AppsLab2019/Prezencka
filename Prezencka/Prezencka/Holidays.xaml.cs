@@ -15,15 +15,37 @@ namespace Prezencka
         {
             if (!IsDateValid(sender, e))
             {
-                await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "OK");
+                await DisplayAlert("CHYBA", "Vami zadaný dátum nie je správny.", "OK");
                 return;
             }
+            else
+            {
+                // kód PDF
+                await DisplayActionSheet("ABSENCIA", "OK", null, "Dovolenka", "Lekár", "PN", "OČR");
+                await DisplayAlert("ABSENCIA ZAZNAMENANÁ", "Vaša absencia bola úspešne zaznamenaná do pracovného výkazu.", "OK");
+            }
 
-            // kód PDF
+          
+        }       
+        private async void OnCancel(object sender, EventArgs e)
+        {
+            await DisplayAlert("ABSENCIA ZRUŠENÁ", "Vaša absencia bola úspešne zrušená.", "OK");
         }
         private bool IsDateValid(object sender, EventArgs e)
         {
-            return date_to_picker.Date < date_from_picker.Date;
+            return date_from_picker.Date <= date_to_picker.Date;
         }
+
+        private void DateFromPicker(object sender, DateChangedEventArgs e)
+        {
+            //pdf
+        }
+
+        private void DateToPicker(object sender, DateChangedEventArgs e)
+        {
+            //pdf
+        }
+
+
     }
 } 

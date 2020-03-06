@@ -16,5 +16,10 @@ namespace Prezencka
         {
             InitializeComponent();
         }
+
+        private void EntryCell_Completed(object sender, EventArgs e)
+        {
+
+        }
     }
 }

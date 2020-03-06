@@ -23,7 +23,7 @@ namespace Prezencka
             await Browser.OpenAsync("https://mojpracovnycas.sk/download/dovolenka.pdf", BrowserLaunchMode.SystemPreferred);
         }
 
-        private async void EmptyTimesheet(object sender, EventArgs e)
+        private async void EmptyTimeSheet(object sender, EventArgs e)
         {
             await Browser.OpenAsync("https://mojpracovnycas.sk/download/pracovny_vykaz.pdf", BrowserLaunchMode.SystemPreferred);
         }

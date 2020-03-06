@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace Prezencka
@@ -14,7 +12,7 @@ namespace Prezencka
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 Device.BeginInvokeOnMainThread(() =>
-                    clock_big.Text = DateTime.Now.ToString("hh:mm:ss"));
+                    clock_big.Text = DateTime.Now.ToString("HH:mm:ss"));
 
                 return true;
             });
@@ -41,6 +39,10 @@ namespace Prezencka
             {
                 await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "OK");
                 return;
+            }
+            else
+            {
+                await DisplayAlert("VLASTNÝ ČAS ZAZNAMENANÝ", "Váš čas bol úspešne zaznamenaný do pracovného výkazu.", "OK");
             }
             
             // kód PDF
