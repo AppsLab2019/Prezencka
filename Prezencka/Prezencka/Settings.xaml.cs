@@ -17,9 +17,22 @@ namespace Prezencka
             InitializeComponent();
         }
 
-        private void EntryCell_Completed(object sender, EventArgs e)
+        private bool IsTimeValid(object sender, EventArgs e)
         {
+            return leaveTime.Time - arriveTime.Time == workingTime.Time;
+        }
 
+        private async void Save(object sender, EventArgs e)
+        {
+            if (!IsTimeValid(sender, e))
+            {
+                await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "OK");
+                return;
+            }
+            else
+            {
+                await DisplayAlert("ULOŽENÉ", "Vaše nastavenia boli úspeśne uložené.", "OK");
+            }
         }
     }
 }
