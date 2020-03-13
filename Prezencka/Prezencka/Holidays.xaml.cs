@@ -16,12 +16,14 @@ namespace Prezencka
             if (!IsDateValid(sender, e))
             {
                 await DisplayAlert("CHYBA", "Vami zadaný dátum nie je správny.", "OK");
-                return;
             }
             else
             {
-                // kód PDF
-                await DisplayActionSheet("ABSENCIA", "OK", null, "Dovolenka", "Lekár", "PN", "OČR");
+                var result = await DisplayActionSheet("ABSENCIA", "OK", null, "Dovolenka", "Lekár", "PN", "OČR");
+
+                if (result is null || result == "")
+                    return;
+                
                 await DisplayAlert("ABSENCIA ZAZNAMENANÁ", "Vaša absencia bola úspešne zaznamenaná do pracovného výkazu.", "OK");
             }
 

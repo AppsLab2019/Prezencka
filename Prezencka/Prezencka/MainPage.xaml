@@ -18,6 +18,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -60,13 +61,20 @@
             Clicked="LeaveButt"
             HorizontalOptions="Center"
             FontSize="30"/>
+        
+        <Label
+            Grid.Row="5" 
+            Text="Totok bude entry"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="Small"/>
 
         <!--#endregion-->
 
         <!--#region ownTime-->
 
         <Grid 
-            Grid.Row="5">
+            Grid.Row="6">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -185,7 +193,7 @@
         <!--#endregion-->
 
         <Image
-            Grid.Row="6"
+            Grid.Row="7"
             HorizontalOptions="Center"
             Source="logo_relecon.png"
             HeightRequest="220"

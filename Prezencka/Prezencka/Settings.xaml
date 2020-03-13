@@ -27,8 +27,9 @@
                 Grid.Column="2"
                 HeightRequest="50"
                 WidthRequest="50"
+                Clicked="Save"
                 Source="tick_icon.png"/>
-            
+
         </Grid>
     </Shell.TitleView>
 
@@ -120,7 +121,7 @@
         <!--#region Entry-->
 
         <Entry
-            x:Name="name"
+            x:Name="NameEntry"
             Grid.Row="0"
             Grid.Column="1"
             Placeholder="Jožko Mrkvička"
@@ -129,7 +130,7 @@
             ReturnType="Done"/>
 
         <Entry
-            x:Name="personalNumber"
+            x:Name="IdEntry"
             Grid.Row="1"
             Grid.Column="1"
             Placeholder="007"
@@ -138,7 +139,7 @@
             ReturnType="Done"/>
 
         <Entry
-            x:Name="company"
+            x:Name="CompanyEntry"
             Grid.Row="2"
             Grid.Column="1"
             Placeholder="Firma a.s."
@@ -151,7 +152,7 @@
         <!--#region TimePicker-->
 
         <TimePicker
-            x:Name="workingTime"
+            x:Name="WorkingTimePicker"
             Grid.Row="3" 
             Grid.Column="1"
             Format="HH:mm"
@@ -161,7 +162,7 @@
             FontSize="20"/>
         
         <TimePicker
-            x:Name="restTime"
+            x:Name="RestTimePicker"
             Grid.Row="4" 
             Grid.Column="1"
             Format="HH:mm"
@@ -171,7 +172,7 @@
             FontSize="20"/>
         
         <TimePicker
-            x:Name="arriveTime"
+            x:Name="ArriveTimePicker"
             Grid.Row="5" 
             Grid.Column="1"
             Format="HH:mm"
@@ -181,7 +182,7 @@
             FontSize="20"/>
 
         <TimePicker
-            x:Name="leaveTime"
+            x:Name="LeaveTimePicker"
             Grid.Row="6" 
             Grid.Column="1"
             Format="HH:mm"
@@ -191,16 +192,7 @@
             FontSize="20"/>
         
         <!--#endregion-->
-
-        <Button
-            Text="ULOŽIŤ"
-            Grid.Row="7"
-            Grid.ColumnSpan="2"
-            WidthRequest="220"
-            Clicked="Save"
-            HorizontalOptions="End"
-            FontSize="30"/>
-        
+       
     </Grid>
 </ContentPage>
     
