@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Prezencka.Holidays"
+             Shell.NavBarIsVisible="True"
+             Title="ABSENCIA">
+    
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label
+                Grid.Column="0"
+                Text="NASTAVENIA"
+                TextColor="Black"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="20"/>
+
+            <ImageButton
+                Grid.Column="2"
+                HeightRequest="50"
+                WidthRequest="50"
+                Clicked="OnCancel"
+                Source="cross_icon.png"/>
+
+            <ImageButton
+                Grid.Column="3"
+                HeightRequest="50"
+                WidthRequest="50"
+                Clicked="OnConfirm"
+                Source="tick_icon.png"/>
+
+        </Grid>
+    </Shell.TitleView>
+    
+    <Grid
+        Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>-->
+
+        <Label
+            x:Name="date_info0"
+            Grid.Row="0" 
+            Text="Dátum sa automaticky vyplní do"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <Label
+            x:Name="date_info1"
+            Grid.Row="1" 
+            Text="pracovného výkazu"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <Label
+            x:Name="date_from"
+            Grid.Row="4" 
+            Text="Dátum od:"
+            TextColor="Black"
+            HorizontalOptions="Start"
+            Margin="57, 0"
+            FontSize="20"/>
+        
+        <Label
+            x:Name="date_to"
+            Grid.Row="4" 
+            Text="Dátum do:"
+            TextColor="Black"
+            HorizontalOptions="End"
+            Margin="57, 0"
+            FontSize="20"/>
+
+        <Label
+            x:Name="time_from"
+            Grid.Row="6" 
+            Text="Čas od:"
+            TextColor="Black"
+            HorizontalOptions="Start"
+            Margin="57, 0"
+            FontSize="20"/>
+
+        <Label
+            x:Name="time_to"
+            Grid.Row="6" 
+            Text="Čas do:"
+            TextColor="Black"
+            HorizontalOptions="End"
+            Margin="57, 0"
+            FontSize="20"/>
+
+        <DatePicker
+            x:Name="date_from_picker"
+            Grid.Row="5" 
+            Format="dd:MM:yyyy"
+            MinimumDate="1/1/2020"
+            MaximumDate="1/1/2100"
+            HorizontalOptions="Start"
+            Margin="50, 0"
+            DateSelected="DateFromPicker"
+            FontSize="20"/>
+
+        <DatePicker
+            x:Name="date_to_picker"
+            Grid.Row="5" 
+            Format="dd:MM:yyyy"
+            MinimumDate="1/1/2020"
+            MaximumDate="1/1/2100"
+            HorizontalOptions="End"
+            Margin="50, 0"
+            DateSelected="DateToPicker"
+            FontSize="20"/>
+
+        <TimePicker
+            x:Name="time_from_picker"
+            Grid.Row="7" 
+            Format="HH:mm"
+            HorizontalOptions="Start"
+            Margin="50, 0"
+            Time="0:00"
+            FontSize="20"/>
+
+        <TimePicker
+            x:Name="time_to_picker"
+            Grid.Row="7" 
+            Format="HH:mm"
+            HorizontalOptions="End"
+            Margin="50, 0"
+            Time="0:00"
+            FontSize="20"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:Prezencka"
+       x:Class="Prezencka.AppShell"
+       BackgroundColor="#AEAFB0"
+       ForegroundColor="#AEAFB0"
+       TitleColor="#303030"
+       DisabledColor="Black"
+       UnselectedColor="White">
+
+    <TabBar x:Name="rootBar">
+
+        <Tab Title="Tabuľka"
+             Icon="show_table_icon.png"
+             TabIndex="0">
+            <ShellContent>
+                <views:Table />
+            </ShellContent>
+        </Tab>
+
+        <Tab Title="Dokumenty"
+             Icon="pdf_export_icon.png"
+             TabIndex="1">
+            <ShellContent>
+                <views:Docs />
+            </ShellContent>
+        </Tab>
+
+        <Tab Title="Domov"
+             Icon="home_icon.png"
+             TabIndex="2">
+            <ShellContent>
+                <views:MainPage />
+            </ShellContent>
+        </Tab>
+
+        <Tab Title="Absencia"
+             Icon="PN_icon.png"
+             TabIndex="3">
+            <ShellContent>
+                <views:Holidays />
+            </ShellContent>
+        </Tab>
+        
+        <Tab Title="Nastavenia"
+             Icon="settings_icon.png"
+             TabIndex="4">
+            <ShellContent>
+                <views:Settings />
+            </ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>

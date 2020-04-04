@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Prezencka.Settings"
+             Shell.NavBarIsVisible="True">
+
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label
+                Grid.Column="0"
+                Text="NASTAVENIA"
+                TextColor="Black"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="20"/>
+
+            <ImageButton
+                Grid.Column="2"
+                HeightRequest="50"
+                WidthRequest="50"
+                Clicked="Save"
+                Source="tick_icon.png"/>
+
+        </Grid>
+    </Shell.TitleView>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!--#region Label-->
+        
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Meno a priezvisko:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Osobné číslo:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Firma:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Fond pracovného času:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+        
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Prestávka:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+        
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Text="Pravidelný Príchod:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+        
+        <Label
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="Pravidelný odchod:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+        
+        <!--#endregion-->
+        
+        <!--#region Entry-->
+
+        <Entry
+            x:Name="NameEntry"
+            Grid.Row="0"
+            Grid.Column="1"
+            Placeholder="Jožko Mrkvička"
+            PlaceholderColor="Olive"
+            ClearButtonVisibility="WhileEditing"
+            ReturnType="Done"/>
+
+        <Entry
+            x:Name="IdEntry"
+            Grid.Row="1"
+            Grid.Column="1"
+            Placeholder="007"
+            PlaceholderColor="Olive"
+            ClearButtonVisibility="WhileEditing"
+            ReturnType="Done"/>
+
+        <Entry
+            x:Name="CompanyEntry"
+            Grid.Row="2"
+            Grid.Column="1"
+            Placeholder="Firma a.s."
+            PlaceholderColor="Olive"
+            ClearButtonVisibility="WhileEditing"
+            ReturnType="Done"/>
+        
+        <!--#endregion-->
+        
+        <!--#region TimePicker-->
+
+        <TimePicker
+            x:Name="WorkingTimePicker"
+            Grid.Row="3" 
+            Grid.Column="1"
+            Format="HH:mm"
+            Time="8:00"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="20"/>
+        
+        <TimePicker
+            x:Name="RestTimePicker"
+            Grid.Row="4" 
+            Grid.Column="1"
+            Format="HH:mm"
+            Time="0:30"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="20"/>
+        
+        <TimePicker
+            x:Name="ArriveTimePicker"
+            Grid.Row="5" 
+            Grid.Column="1"
+            Format="HH:mm"
+            Time="8:00"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="20"/>
+
+        <TimePicker
+            x:Name="LeaveTimePicker"
+            Grid.Row="6" 
+            Grid.Column="1"
+            Format="HH:mm"
+            Time="16:00"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="20"/>
+        
+        <!--#endregion-->
+       
+    </Grid>
+</ContentPage>
+    

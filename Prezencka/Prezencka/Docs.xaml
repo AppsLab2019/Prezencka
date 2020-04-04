@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Prezencka.Docs"
+             Shell.NavBarIsVisible="True"
+             Title="DOKUMENTY NA STIAHNUTIE">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Label
+            x:Name="online_info"
+            Grid.Row="0" 
+            Text="Pre stiahnutie nasledujúcich dokumentov,"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <Label
+            x:Name="online_info1"
+            Grid.Row="1" 
+            Text="musíte mať prístup na internet!"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontSize="20"/>
+        
+        <Button
+            Text="PRIEPUSTKA"
+            Grid.Row="2"
+            WidthRequest="220"
+            Clicked="Ticket"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+
+        <Button
+            Text="DOVOLENKA"
+            Grid.Row="3"
+            WidthRequest="220"
+            Clicked="Holiday"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+
+        <Button
+            Text="PRÁZDNY PRACOVNÝ VÝKAZ"
+            Grid.Row="4"
+            WidthRequest="220"
+            Clicked="EmptyTimeSheet"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+    </Grid>
+</ContentPage>

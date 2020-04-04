@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Prezencka.MainPage"
+             Shell.NavBarIsVisible="false">
+
+
+
+    <Grid 
+        Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--#region Main-->
+
+        <Label
+            x:Name="clock_big"
+            Text="clock"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="60"/>
+
+        <Label
+            x:Name="reminder"
+            Grid.Row="1" 
+            Text="reminder"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="Small"/>
+
+        <Button
+            Text="PRÍCHOD"
+            Grid.Row="2"
+            WidthRequest="220"
+            Clicked="ArriveButt"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+        <Button
+            Text="PRESTÁVKA"
+            Grid.Row="3"
+            WidthRequest="220"
+            Clicked="RestButt"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+
+        <Button
+            Text="ODCHOD"
+            Grid.Row="4"
+            WidthRequest="220"
+            Clicked="LeaveButt"
+            HorizontalOptions="Center"
+            FontSize="30"/>
+        
+        <Label
+            Grid.Row="5" 
+            Text="Totok bude entry"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="Small"/>
+
+        <!--#endregion-->
+
+        <!--#region ownTime-->
+
+        <Grid 
+            Grid.Row="6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Grid.ColumnSpan="4"
+                Text="VLASTNÝ ČAS"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="220"
+                TextColor="Black"
+                Clicked="OnConfirm"
+                FontSize="30"/>
+
+            <!-- #region labels -->
+
+            <Label
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                Text="PRÍCHOD"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="Black"
+                FontSize="15"/>
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Text="PRESTÁVKA"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="Black"
+                FontSize="15"/>
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="ZAČIATOK"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="Black"
+                FontSize="15"/>
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="2"
+                Text="KONIEC"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="Black"
+                FontSize="15"/>
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="3"
+                Grid.RowSpan="2"
+                Text="ODCHOD"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="Black"
+                FontSize="15"/>
+
+            <!--#endregion-->
+
+            <!--#region TimePicker-->
+
+            <TimePicker
+                x:Name="ArriveTime"
+                Grid.Row="3" 
+                Format="HH:mm"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="20"/>
+
+            <TimePicker
+                x:Name="RestStartTime"
+                Grid.Row="3"
+                Grid.Column="1"
+                Format="HH:mm"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="20"/>
+
+            <TimePicker
+                x:Name="RestEndTime"
+                Grid.Row="3"
+                Grid.Column="2"
+                Format="HH:mm"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="20"/>
+
+            <TimePicker
+                x:Name="LeaveTime"
+                Grid.Row="3"
+                Grid.Column="3"
+                Format="HH:mm"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="20"/>
+            <!--#endregion-->
+
+        </Grid>
+
+        <!--#endregion-->
+
+        <Image
+            Grid.Row="7"
+            HorizontalOptions="Center"
+            Source="logo_relecon.png"
+            HeightRequest="220"
+            WidthRequest="220"/>
+
+    </Grid>
+</ContentPage>

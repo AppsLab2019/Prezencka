@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:m="clr-namespace:Prezencka.Models;assembly=Prezencka"
+             xmlns:vm="clr-namespace:Prezencka.ViewModels"
+             xmlns:converters="clr-namespace:Prezencka.Converters"
+             mc:Ignorable="d"
+             x:Class="Prezencka.Table"
+             Shell.NavBarIsVisible="false"
+             BackgroundColor="#F0F0F0">
+
+    <ContentPage.BindingContext>
+        <vm:TableViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:YearMonthToFormattedStringConverter x:Key="YearMonthFormatter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#B0B0B0"
+                  HeightRequest="60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Source="ic_action_arrow_back.png"
+                             BackgroundColor="Transparent"
+                             Command="{Binding PreviousMonthCommand}"/>
+
+                <Label Grid.Column="1"
+                       FontSize="30"
+                       TextColor="#D0F0F0F0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Text="{Binding YearMonth, Converter={StaticResource YearMonthFormatter}}"/>
+
+                <ImageButton Grid.Column="2"
+                             Source="ic_action_arrow_forward.png"
+                             BackgroundColor="Transparent"
+                             Command="{Binding NextMonthCommand}"/>
+            </Grid>
+
+            <CollectionView Margin="5"
+                            ItemsSource="{Binding WorkDays}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="m:WorkDay">
+                        <StackLayout Padding="6">
+                            <Frame Padding="15"
+                               HasShadow="True">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Dátum:"
+                                       FontSize="Large"/>
+
+                                    <Label Grid.Row="0"
+                                       Grid.Column="1"
+                                       Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"
+                                       FontSize="Large"/>
+
+                                    <BoxView Grid.Row="1"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         HeightRequest="1"
+                                         BackgroundColor="LightGray"/>
+
+                                    <Label Grid.Row="2"
+                                       Grid.Column="0"
+                                       Text="Príchod:"/>
+
+                                    <Label Grid.Row="2"
+                                       Grid.Column="1"
+                                       Text="{Binding ArriveTime, StringFormat='{0:hh\\:mm}'}"/>
+
+                                    <Label Grid.Row="3"
+                                       Grid.Column="0"
+                                       Text="Prestávka:"/>
+
+                                    <Label Grid.Row="3"
+                                       Grid.Column="1">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding RestStartTime, StringFormat='{0:hh\\:mm}'}"/>
+                                                <Span Text=" - "/>
+                                                <Span Text="{Binding RestStopTime, StringFormat='{0:hh\\:mm}'}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label Grid.Row="4"
+                                       Grid.Column="0"
+                                       Text="Odchod:"/>
+
+                                    <Label Grid.Row="4"
+                                       Grid.Column="1"
+                                       Text="{Binding LeaveTime, StringFormat='{0:hh\\:mm}'}"/>
+
+                                    <BoxView Grid.Row="5"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         HeightRequest="1"
+                                         BackgroundColor="LightGray"/>
+
+                                    <Label Grid.Row="6"
+                                           Grid.Column="0"
+                                           Grid.ColumnSpan="2"
+                                           Text="{Binding Comment}"/>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
