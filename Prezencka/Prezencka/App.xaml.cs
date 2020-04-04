@@ -1,28 +1,20 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Prezencka.Services;
 
 namespace Prezencka
 {
-    public partial class App : Application
+    public partial class App
     {
-        public App()
-        {
+        public static WorkDayStore WorkDayStore { get; private set; }
+
+        public App() => 
             InitializeComponent();
 
+        protected override async void OnStart()
+        {
+            WorkDayStore = new WorkDayStore();
+            await WorkDayStore.InitAsync();
+
             MainPage = new AppShell();
-        }
-
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
         }
     }
 }

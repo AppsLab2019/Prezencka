@@ -11,9 +11,7 @@ namespace Prezencka
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                Device.BeginInvokeOnMainThread(() =>
-                    clock_big.Text = DateTime.Now.ToString("HH:mm:ss"));
-
+                clock_big.Text = DateTime.Now.ToString("HH:mm:ss");
                 return true;
             });
         }
@@ -35,7 +33,7 @@ namespace Prezencka
         
         private async void OnConfirm(object sender, EventArgs e)
         {
-            if (!IsTimeValid(sender, e))
+            if (!IsTimeValid())
             {
                 await DisplayAlert("CHYBA", "Vami zadaný čas nie je správny.", "OK");
                 return;
@@ -48,9 +46,9 @@ namespace Prezencka
             // kód PDF
         }
 
-        private bool IsTimeValid(object sender, EventArgs e)
+        private bool IsTimeValid()
         {
-            return ArriveTime.Time < RestEndTime.Time
+            return ArriveTime.Time <= LeaveTime.Time
                 && ArriveTime.Time < RestStartTime.Time
                 && ArriveTime.Time < RestEndTime.Time;
         }

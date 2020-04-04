@@ -1,11 +1,8 @@
 ﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using System.Diagnostics;
 using System;
 
 namespace Prezencka
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Holidays : ContentPage
     {
         public Holidays() => 
