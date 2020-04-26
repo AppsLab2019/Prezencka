@@ -88,6 +88,17 @@ namespace Prezencka.Services
             return _connection.UpdateAsync(day);
         }
 
+        public Task AddOrUpdateAsync(WorkDay day)
+        {
+            if (day is null)
+                throw new ArgumentNullException(nameof(day));
+
+            if (day.Id != default)
+                return UpdateAsync(day);
+            else
+                return AddAsync(day);
+        }
+
         public Task RemoveAsync(WorkDay day)
         {
             if (day is null)

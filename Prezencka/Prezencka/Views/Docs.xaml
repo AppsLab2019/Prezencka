@@ -2,11 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodels="clr-namespace:Prezencka.ViewModels"
              mc:Ignorable="d"
-             x:Class="Prezencka.Docs"
+             x:Class="Prezencka.Views.Docs"
              Shell.NavBarIsVisible="True"
              Title="DOKUMENTY NA STIAHNUTIE">
+
+    <ContentPage.BindingContext>
+        <viewmodels:DocsViewModel/>
+    </ContentPage.BindingContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -37,24 +42,24 @@
             Text="PRIEPUSTKA"
             Grid.Row="2"
             WidthRequest="220"
-            Clicked="Ticket"
             HorizontalOptions="Center"
+            Command="{Binding TicketCommand}"
             FontSize="30"/>
 
         <Button
             Text="DOVOLENKA"
             Grid.Row="3"
             WidthRequest="220"
-            Clicked="Holiday"
             HorizontalOptions="Center"
+            Command="{Binding HolidayCommand}"
             FontSize="30"/>
 
         <Button
             Text="PRÁZDNY PRACOVNÝ VÝKAZ"
             Grid.Row="4"
             WidthRequest="220"
-            Clicked="EmptyTimeSheet"
             HorizontalOptions="Center"
+            Command="{Binding TimeSheetCommand}"
             FontSize="30"/>
     </Grid>
 </ContentPage>

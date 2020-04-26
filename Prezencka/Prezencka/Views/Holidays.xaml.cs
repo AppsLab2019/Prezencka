@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using System;
 
-namespace Prezencka
+namespace Prezencka.Views
 {
     public partial class Holidays : ContentPage
     {

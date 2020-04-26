@@ -1,6 +1,6 @@
 ﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:views="clr-namespace:Prezencka"
+       xmlns:views="clr-namespace:Prezencka.Views;assembly=Prezencka"
        x:Class="Prezencka.AppShell"
        BackgroundColor="#AEAFB0"
        ForegroundColor="#AEAFB0"
@@ -13,41 +13,31 @@
         <Tab Title="Tabuľka"
              Icon="show_table_icon.png"
              TabIndex="0">
-            <ShellContent>
-                <views:Table />
-            </ShellContent>
+            <ShellContent ContentTemplate="{DataTemplate views:Table}"/>
         </Tab>
 
         <Tab Title="Dokumenty"
              Icon="pdf_export_icon.png"
              TabIndex="1">
-            <ShellContent>
-                <views:Docs />
-            </ShellContent>
+            <ShellContent ContentTemplate="{DataTemplate views:Docs}"/>
         </Tab>
 
         <Tab Title="Domov"
              Icon="home_icon.png"
              TabIndex="2">
-            <ShellContent>
-                <views:MainPage />
-            </ShellContent>
+            <ShellContent ContentTemplate="{DataTemplate views:MainPage}"/>
         </Tab>
 
         <Tab Title="Absencia"
              Icon="PN_icon.png"
              TabIndex="3">
-            <ShellContent>
-                <views:Holidays />
-            </ShellContent>
+            <ShellContent ContentTemplate="{DataTemplate views:Holidays}"/>
         </Tab>
         
         <Tab Title="Nastavenia"
              Icon="settings_icon.png"
              TabIndex="4">
-            <ShellContent>
-                <views:Settings />
-            </ShellContent>
+            <ShellContent ContentTemplate="{DataTemplate views:Settings}"/>
         </Tab>
     </TabBar>
 </Shell>

@@ -14,6 +14,7 @@ namespace Prezencka.Converters
         {
             _numberToString = new Dictionary<int, string>
             {
+                [0] = "Month",
                 [1] = "Január",
                 [2] = "Február",
                 [3] = "Marec",

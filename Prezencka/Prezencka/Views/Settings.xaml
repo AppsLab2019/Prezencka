@@ -2,10 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:viewmodels="clr-namespace:Prezencka.ViewModels"
              mc:Ignorable="d"
-             x:Class="Prezencka.Settings"
+             x:Class="Prezencka.Views.Settings"
              Shell.NavBarIsVisible="True">
+
+    <ContentPage.BindingContext>
+        <viewmodels:SettingsViewModel/>
+    </ContentPage.BindingContext>
 
     <Shell.TitleView>
         <Grid>
@@ -27,8 +32,8 @@
                 Grid.Column="2"
                 HeightRequest="50"
                 WidthRequest="50"
-                Clicked="Save"
-                Source="tick_icon.png"/>
+                Source="tick_icon.png"
+                Command="{Binding SaveCommand}"/>
 
         </Grid>
     </Shell.TitleView>
@@ -121,29 +126,29 @@
         <!--#region Entry-->
 
         <Entry
-            x:Name="NameEntry"
             Grid.Row="0"
             Grid.Column="1"
+            Text="{Binding Name}"
             Placeholder="Jožko Mrkvička"
             PlaceholderColor="Olive"
             ClearButtonVisibility="WhileEditing"
             ReturnType="Done"/>
 
         <Entry
-            x:Name="IdEntry"
             Grid.Row="1"
             Grid.Column="1"
             Placeholder="007"
+            Text="{Binding Id}"
             PlaceholderColor="Olive"
             ClearButtonVisibility="WhileEditing"
             ReturnType="Done"/>
 
         <Entry
-            x:Name="CompanyEntry"
             Grid.Row="2"
             Grid.Column="1"
             Placeholder="Firma a.s."
             PlaceholderColor="Olive"
+            Text="{Binding Company}"
             ClearButtonVisibility="WhileEditing"
             ReturnType="Done"/>
         
@@ -152,41 +157,37 @@
         <!--#region TimePicker-->
 
         <TimePicker
-            x:Name="WorkingTimePicker"
             Grid.Row="3" 
             Grid.Column="1"
             Format="HH:mm"
-            Time="8:00"
+            Time="{Binding WorkingTime}"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="20"/>
         
         <TimePicker
-            x:Name="RestTimePicker"
             Grid.Row="4" 
             Grid.Column="1"
             Format="HH:mm"
-            Time="0:30"
+            Time="{Binding RestTime}"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="20"/>
         
         <TimePicker
-            x:Name="ArriveTimePicker"
             Grid.Row="5" 
             Grid.Column="1"
             Format="HH:mm"
-            Time="8:00"
+            Time="{Binding ArriveTime}"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="20"/>
 
         <TimePicker
-            x:Name="LeaveTimePicker"
             Grid.Row="6" 
             Grid.Column="1"
             Format="HH:mm"
-            Time="16:00"
+            Time="{Binding LeaveTime}"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="20"/>

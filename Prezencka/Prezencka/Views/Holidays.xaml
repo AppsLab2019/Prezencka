@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Prezencka.Holidays"
+             x:Class="Prezencka.Views.Holidays"
              Shell.NavBarIsVisible="True"
              Title="ABSENCIA">
     
