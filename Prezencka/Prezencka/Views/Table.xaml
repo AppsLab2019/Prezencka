@@ -8,6 +8,7 @@
              xmlns:converters="clr-namespace:Prezencka.Converters"
              mc:Ignorable="d"
              x:Class="Prezencka.Views.Table"
+             x:Name="Root"
              Shell.NavBarIsVisible="false"
              BackgroundColor="#F0F0F0">
 
@@ -69,6 +70,8 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="Dátum:"
@@ -79,9 +82,28 @@
                                        Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"
                                        FontSize="Large"/>
 
+                                    <ImageButton Grid.Row="0"
+                                           Grid.Column="2"
+                                           WidthRequest="32"
+                                           HeightRequest="32"
+                                           Source="ic_edit.png"
+                                           BackgroundColor="Transparent"
+                                           Command="{Binding BindingContext.EditCommand, Source={x:Reference Root}}"
+                                           CommandParameter="{Binding}"/>
+
+                                    <ImageButton Grid.Row="0"
+                                           Grid.Column="3"
+                                           WidthRequest="32"
+                                           HeightRequest="32"
+                                           BackgroundColor="Transparent"
+                                           Source="ic_delete_forever.png"
+                                           Command="{Binding BindingContext.DeleteCommand, Source={x:Reference Root}}"
+                                           CommandParameter="{Binding}"/>
+
+
                                     <BoxView Grid.Row="1"
                                          Grid.Column="0"
-                                         Grid.ColumnSpan="2"
+                                         Grid.ColumnSpan="4"
                                          HeightRequest="1"
                                          BackgroundColor="LightGray"/>
 
@@ -118,7 +140,7 @@
 
                                     <BoxView Grid.Row="5"
                                          Grid.Column="0"
-                                         Grid.ColumnSpan="2"
+                                         Grid.ColumnSpan="4"
                                          HeightRequest="1"
                                          BackgroundColor="LightGray"/>
 

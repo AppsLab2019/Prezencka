@@ -1,5 +1,6 @@
 ﻿using Prezencka.Models;
 using Prezencka.Services;
+using Prezencka.Views;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -15,6 +16,8 @@ namespace Prezencka.ViewModels
         public ICommand RefreshCommand { get; }
         public ICommand PreviousMonthCommand { get; }
         public ICommand NextMonthCommand { get; }
+        public ICommand EditCommand { get; }
+        public ICommand DeleteCommand { get; }
 
         private readonly WorkDayStore _workDayStore;
 
@@ -25,6 +28,8 @@ namespace Prezencka.ViewModels
             RefreshCommand = new Command(Refresh);
             PreviousMonthCommand = new Command(HandlePreviousMonth);
             NextMonthCommand = new Command(HandleNextMonth);
+            EditCommand = new Command<WorkDay>(HandleEdit);
+            DeleteCommand = new Command<WorkDay>(HandleDelete);
         }
 
         private void Refresh()
@@ -84,6 +89,30 @@ namespace Prezencka.ViewModels
                 WorkDays = new ObservableCollection<WorkDay>(retrievedInfo);
 
             RaisePropertyChanged(nameof(WorkDays));
+        }
+
+        private async void HandleEdit(WorkDay day)
+        {
+            if (day is null)
+                return;
+
+            var view = new EditDay { BindingContext = new EditDayViewModel(day) };
+            await Shell.Current.Navigation.PushAsync(view);
+        }
+
+        private async void HandleDelete(WorkDay day)
+        {
+            if (day is null)
+                return;
+
+            var shouldDelete = await DisplayAlert("Confirmation",
+                $"Are you sure you want to delete an entry for {day.Date:dd.MM.yyyy}?", "Yes", "No");
+
+            if (!shouldDelete)
+                return;
+
+            await _workDayStore.RemoveAsync(day);
+            WorkDays.Remove(day);
         }
     }
 }

@@ -12,6 +12,9 @@ namespace Prezencka.ViewModels
         protected Task DisplayAlert(string title, string message, string cancel) =>
             Application.Current.MainPage.DisplayAlert(title, message, cancel);
 
+        protected Task<bool> DisplayAlert(string title, string message, string confirm, string cancel) =>
+            Application.Current.MainPage.DisplayAlert(title, message, confirm, cancel);
+
         protected Task OpenInBrowser(string uri) =>
             OpenInBrowser(new Uri(uri));
 

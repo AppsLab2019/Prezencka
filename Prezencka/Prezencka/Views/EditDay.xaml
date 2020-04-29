@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:viewmodels="clr-namespace:Prezencka.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Prezencka.Views.EditDay"
+             x:DataType="viewmodels:EditDayViewModel"
+             Title="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding BackCommand}"/>
+    </Shell.BackButtonBehavior>
+
+    <Shell.TitleView>
+        <Grid Padding="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="1"
+                   FontSize="30"
+                   VerticalOptions="Center"
+                   Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"/>
+
+            <ImageButton Grid.Column="2" 
+                         WidthRequest="24"
+                         HeightRequest="24"
+                         VerticalOptions="Center"
+                         BackgroundColor="Transparent"
+                         Source="ic_check.png"
+                         Command="{Binding SaveCommand}"/>
+        </Grid>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout Padding="6"
+                     Spacing="10">
+            <StackLayout>
+                <Label Text="Príchod:"
+                       FontSize="Large"/>
+
+                <TimePicker Time="{Binding ArriveTime}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1">
+                <Label Text="Prestávka:"
+                       FontSize="Large"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TimePicker Time="{Binding RestStartTime}"/>
+
+                    <Label Grid.Column="1"
+                           Text="-"
+                           FontSize="Large"
+                           VerticalOptions="Center"/>
+
+                    <TimePicker Grid.Column="2"
+                                Time="{Binding RestStopTime}"/>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2">
+                <Label Text="Odchod:"
+                       FontSize="Large"/>
+
+                <TimePicker Time="{Binding LeaveTime}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3">
+                <Label Text="Komentár:"
+                       FontSize="Large"/>
+
+                <Editor HeightRequest="100"
+                        Text="{Binding Comment}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
