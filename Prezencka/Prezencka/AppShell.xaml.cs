@@ -1,17 +1,8 @@
-﻿using Xamarin.Forms;
-
-namespace Prezencka
+﻿namespace Prezencka
 {
-    public partial class AppShell : Shell
+    public partial class AppShell
     {
-        public AppShell()
-        {
-            
+        public AppShell() => 
             InitializeComponent();
-
-            rootBar.CurrentItem = rootBar.Items[2];
-
-            NavigationPage.SetHasNavigationBar(this, false);
-        }
     }
 }

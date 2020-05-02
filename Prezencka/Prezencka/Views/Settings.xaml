@@ -48,6 +48,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -97,7 +98,7 @@
         <Label
             Grid.Row="4"
             Grid.Column="0"
-            Text="Prestávka:"
+            Text="Dĺžka prestávky:"
             HorizontalOptions="Start"
             VerticalOptions="Center"
             TextColor="Black"
@@ -106,7 +107,7 @@
         <Label
             Grid.Row="5"
             Grid.Column="0"
-            Text="Pravidelný Príchod:"
+            Text="Pravidelný príchod:"
             HorizontalOptions="Start"
             VerticalOptions="Center"
             TextColor="Black"
@@ -114,6 +115,15 @@
         
         <Label
             Grid.Row="6"
+            Grid.Column="0"
+            Text="Pravidelný začiatok prestávky:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+        
+        <Label
+            Grid.Row="7"
             Grid.Column="0"
             Text="Pravidelný odchod:"
             HorizontalOptions="Start"
@@ -182,9 +192,18 @@
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="20"/>
-
+        
         <TimePicker
             Grid.Row="6" 
+            Grid.Column="1"
+            Format="HH:mm"
+            Time="{Binding RestStartTime}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="20"/>
+
+        <TimePicker
+            Grid.Row="7" 
             Grid.Column="1"
             Format="HH:mm"
             Time="{Binding LeaveTime}"

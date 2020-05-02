@@ -12,16 +12,19 @@ namespace Prezencka.Services
             get => Get<string>("Name");
             set => _properties["Name"] = value;
         }
+
         public string Id
         {
             get => Get<string>("Id");
             set => _properties["Id"] = value;
         }
+
         public string Company
         {
             get => Get<string>("Company");
             set => _properties["Company"] = value;
         }
+
         public TimeSpan WorkingTime
         {
             get => Get("WorkingTime", new TimeSpan(8, 0, 0));
@@ -32,11 +35,19 @@ namespace Prezencka.Services
             get => Get("RestTime", new TimeSpan(0, 30, 0));
             set => _properties["RestTime"] = value;
         }
+
         public TimeSpan ArriveTime
         {
             get => Get("ArriveTime", new TimeSpan(8, 0, 0));
             set => _properties["ArriveTime"] = value;
         }
+
+        public TimeSpan RestStartTime
+        {
+            get => Get("RestStartTime", new TimeSpan(12, 0, 0));
+            set => _properties["RestStartTime"] = value;
+        }
+
         public TimeSpan LeaveTime
         {
             get => Get("LeaveTime", new TimeSpan(16, 0, 0));

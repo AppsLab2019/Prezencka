@@ -14,6 +14,7 @@ namespace Prezencka.ViewModels
         public TimeSpan WorkingTime { get; set; }
         public TimeSpan RestTime { get; set; }
         public TimeSpan ArriveTime { get; set; }
+        public TimeSpan RestStartTime { get; set; }
         public TimeSpan LeaveTime { get; set; }
 
         public ICommand LoadCommand { get; }
@@ -37,6 +38,7 @@ namespace Prezencka.ViewModels
             WorkingTime = _settingsSerivce.WorkingTime;
             RestTime = _settingsSerivce.RestTime;
             ArriveTime = _settingsSerivce.ArriveTime;
+            RestStartTime = _settingsSerivce.RestStartTime;
             LeaveTime = _settingsSerivce.LeaveTime;
 
             RaiseAllPropertiesChanged();
@@ -56,6 +58,7 @@ namespace Prezencka.ViewModels
             _settingsSerivce.WorkingTime = WorkingTime;
             _settingsSerivce.RestTime = RestTime;
             _settingsSerivce.ArriveTime = ArriveTime;
+            _settingsSerivce.RestStartTime = RestStartTime;
             _settingsSerivce.LeaveTime = LeaveTime;
 
             await _settingsSerivce.FlushSettings();

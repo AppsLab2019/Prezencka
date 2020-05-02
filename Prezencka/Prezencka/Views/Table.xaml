@@ -32,8 +32,13 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <ImageButton Source="ic_action_arrow_back.png"
-                             BackgroundColor="Transparent"
+                <ImageButton Margin="10,0,0,0"
+                             WidthRequest="32"
+                             HeightRequest="32"
+                             VerticalOptions="Center"
+                             BackgroundColor="#AEAFB0"
+                             CornerRadius="32"
+                             Source="ic_action_arrow_back.png"
                              Command="{Binding PreviousMonthCommand}"/>
 
                 <Label Grid.Column="1"
@@ -44,8 +49,13 @@
                        Text="{Binding YearMonth, Converter={StaticResource YearMonthFormatter}}"/>
 
                 <ImageButton Grid.Column="2"
+                             Margin="0,0,10,0"
+                             WidthRequest="32"
+                             HeightRequest="32"
+                             VerticalOptions="Center"
+                             BackgroundColor="#AEAFB0"
+                             CornerRadius="32"
                              Source="ic_action_arrow_forward.png"
-                             BackgroundColor="Transparent"
                              Command="{Binding NextMonthCommand}"/>
             </Grid>
 
@@ -55,7 +65,7 @@
                     <DataTemplate x:DataType="m:WorkDay">
                         <StackLayout Padding="6">
                             <Frame Padding="15"
-                               HasShadow="True">
+                                   HasShadow="True">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
@@ -75,52 +85,51 @@
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="Dátum:"
-                                       FontSize="Large"/>
+                                           FontSize="Large"/>
 
                                     <Label Grid.Row="0"
-                                       Grid.Column="1"
-                                       Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"
-                                       FontSize="Large"/>
+                                           Grid.Column="1"
+                                           Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"
+                                           FontSize="Large"/>
 
                                     <ImageButton Grid.Row="0"
-                                           Grid.Column="2"
-                                           WidthRequest="32"
-                                           HeightRequest="32"
-                                           Source="ic_edit.png"
-                                           BackgroundColor="Transparent"
-                                           Command="{Binding BindingContext.EditCommand, Source={x:Reference Root}}"
-                                           CommandParameter="{Binding}"/>
+                                                 Grid.Column="2"
+                                                 WidthRequest="32"
+                                                 HeightRequest="32"
+                                                 Source="ic_edit.png"
+                                                 BackgroundColor="Transparent"
+                                                 Command="{Binding BindingContext.EditCommand, Source={x:Reference Root}}"
+                                                 CommandParameter="{Binding}"/>
 
                                     <ImageButton Grid.Row="0"
-                                           Grid.Column="3"
-                                           WidthRequest="32"
-                                           HeightRequest="32"
-                                           BackgroundColor="Transparent"
-                                           Source="ic_delete_forever.png"
-                                           Command="{Binding BindingContext.DeleteCommand, Source={x:Reference Root}}"
-                                           CommandParameter="{Binding}"/>
-
+                                                 Grid.Column="3"
+                                                 WidthRequest="32"
+                                                 HeightRequest="32"
+                                                 BackgroundColor="Transparent"
+                                                 Source="ic_delete_forever.png"
+                                                 Command="{Binding BindingContext.DeleteCommand, Source={x:Reference Root}}"
+                                                 CommandParameter="{Binding}"/>
 
                                     <BoxView Grid.Row="1"
-                                         Grid.Column="0"
-                                         Grid.ColumnSpan="4"
-                                         HeightRequest="1"
-                                         BackgroundColor="LightGray"/>
+                                             Grid.Column="0"
+                                             Grid.ColumnSpan="4"
+                                             HeightRequest="1"
+                                             BackgroundColor="LightGray"/>
 
                                     <Label Grid.Row="2"
-                                       Grid.Column="0"
-                                       Text="Príchod:"/>
+                                           Grid.Column="0"
+                                           Text="Príchod:"/>
 
                                     <Label Grid.Row="2"
-                                       Grid.Column="1"
-                                       Text="{Binding ArriveTime, StringFormat='{0:hh\\:mm}'}"/>
+                                           Grid.Column="1"
+                                           Text="{Binding ArriveTime, StringFormat='{0:hh\\:mm}'}"/>
 
                                     <Label Grid.Row="3"
-                                       Grid.Column="0"
-                                       Text="Prestávka:"/>
+                                           Grid.Column="0"
+                                           Text="Prestávka:"/>
 
                                     <Label Grid.Row="3"
-                                       Grid.Column="1">
+                                           Grid.Column="1">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding RestStartTime, StringFormat='{0:hh\\:mm}'}"/>
@@ -131,18 +140,18 @@
                                     </Label>
 
                                     <Label Grid.Row="4"
-                                       Grid.Column="0"
-                                       Text="Odchod:"/>
+                                           Grid.Column="0"
+                                           Text="Odchod:"/>
 
                                     <Label Grid.Row="4"
-                                       Grid.Column="1"
-                                       Text="{Binding LeaveTime, StringFormat='{0:hh\\:mm}'}"/>
+                                           Grid.Column="1"
+                                           Text="{Binding LeaveTime, StringFormat='{0:hh\\:mm}'}"/>
 
                                     <BoxView Grid.Row="5"
-                                         Grid.Column="0"
-                                         Grid.ColumnSpan="4"
-                                         HeightRequest="1"
-                                         BackgroundColor="LightGray"/>
+                                             Grid.Column="0"
+                                             Grid.ColumnSpan="4"
+                                             HeightRequest="1"
+                                             BackgroundColor="LightGray"/>
 
                                     <Label Grid.Row="6"
                                            Grid.Column="0"

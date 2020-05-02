@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="Prezencka.Views.EditDay"
              x:DataType="viewmodels:EditDayViewModel"
-             Title="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}">
+             Shell.ForegroundColor="White">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding BackCommand}"/>
@@ -20,16 +20,18 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="1"
-                   FontSize="30"
+            <Label FontSize="30"
                    VerticalOptions="Center"
+                   TextColor="White"
                    Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"/>
 
-            <ImageButton Grid.Column="2" 
-                         WidthRequest="24"
-                         HeightRequest="24"
+            <ImageButton Grid.Column="1"
+                         Margin="0,0,10,0"
+                         WidthRequest="32"
+                         HeightRequest="32"
                          VerticalOptions="Center"
-                         BackgroundColor="Transparent"
+                         BackgroundColor="#AEAFB0"
+                         CornerRadius="32"
                          Source="ic_check.png"
                          Command="{Binding SaveCommand}"/>
         </Grid>
@@ -45,7 +47,7 @@
                 <TimePicker Time="{Binding ArriveTime}"/>
             </StackLayout>
 
-            <StackLayout Grid.Row="1">
+            <StackLayout>
                 <Label Text="Prestávka:"
                        FontSize="Large"/>
 
@@ -68,14 +70,14 @@
                 </Grid>
             </StackLayout>
 
-            <StackLayout Grid.Row="2">
+            <StackLayout>
                 <Label Text="Odchod:"
                        FontSize="Large"/>
 
                 <TimePicker Time="{Binding LeaveTime}"/>
             </StackLayout>
 
-            <StackLayout Grid.Row="3">
+            <StackLayout>
                 <Label Text="Komentár:"
                        FontSize="Large"/>
 
