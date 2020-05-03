@@ -15,7 +15,7 @@ namespace Prezencka.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged<T>(ref T backingField, T value, [CallerMemberName] string propertyName = null)
+        protected void OnPropertyChanged<T>(ref T backingField, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(value, backingField))
                 return;

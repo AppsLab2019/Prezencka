@@ -74,7 +74,7 @@ namespace Prezencka.Services
 
             var conflictCount = list.Count(workDay => workDay.Date.Day == day.Date.Day);
             if (conflictCount > 0)
-                throw new Exception(); // dočasné (možno) (Erik)
+                throw new Exception();
 
             list.Add(day);
             return _connection.InsertAsync(day);
@@ -116,7 +116,7 @@ namespace Prezencka.Services
 
             list.Remove(day);
 
-            if (list.Count <= 0)
+            if (!list.Any())
                 _workDays.Remove(yearMonth);
 
             return _connection.DeleteAsync(day);
