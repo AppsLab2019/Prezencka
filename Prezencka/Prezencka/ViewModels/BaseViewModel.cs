@@ -1,8 +1,6 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Prezencka.ViewModels
@@ -14,12 +12,6 @@ namespace Prezencka.ViewModels
 
         protected Task<bool> DisplayAlert(string title, string message, string confirm, string cancel) =>
             Application.Current.MainPage.DisplayAlert(title, message, confirm, cancel);
-
-        protected Task OpenInBrowser(string uri) =>
-            OpenInBrowser(new Uri(uri));
-
-        protected Task OpenInBrowser(Uri uri) =>
-            Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
 
         public event PropertyChangedEventHandler PropertyChanged;
 

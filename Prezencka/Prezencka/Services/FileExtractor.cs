@@ -8,13 +8,13 @@ namespace Prezencka.Services
 {
     public static class FileExtractor
     {
-        public static Task Extract(string name, string path)
+        public static Task<bool> Extract(string name, string path)
         {
             var assembly = Assembly.GetExecutingAssembly();
             return ExtractFromAssembly(assembly, name, path);
         }
 
-        public static async Task ExtractFromAssembly(Assembly assembly, string name, string path)
+        public static async Task<bool> ExtractFromAssembly(Assembly assembly, string name, string path)
         {
             if (assembly is null)
                 throw new ArgumentNullException(nameof(assembly));
@@ -29,13 +29,14 @@ namespace Prezencka.Services
 
             if (writeStatus != PermissionStatus.Granted && !await RequestWritePermission())
             {
-                // TODO: display fail alert
-                return;
+                return false;
             }
 
             using (var stream = assembly.GetManifestResourceStream(name))
-                using (var fileStream = File.OpenWrite(path))
+                using (var fileStream = File.Open(path, FileMode.Create, FileAccess.Write))
                     await stream.CopyToAsync(fileStream);
+
+            return true;
         }
 
         private static async Task<bool> RequestWritePermission()

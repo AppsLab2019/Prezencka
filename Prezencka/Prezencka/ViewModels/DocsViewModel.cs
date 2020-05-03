@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Prezencka.Services;
+using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -10,26 +12,51 @@ namespace Prezencka.ViewModels
         public ICommand HolidayCommand { get; }
         public ICommand TimeSheetCommand { get; }
 
+        private readonly string _extractPath;
+
         public DocsViewModel()
         {
             TicketCommand = new Command(async () => await OpenTicket());
             HolidayCommand = new Command(async () => await OpenHoliday());
             TimeSheetCommand = new Command(async () => await OpenTimeSheet());
+            
+            _extractPath = "/storage/emulated/0/";
         }
 
         private Task OpenTicket()
         {
-            return OpenInBrowser("https://mojpracovnycas.sk/download/priepustka.pdf");
+            return ExtractDocument("priepustka.pdf");
         }
         
         private Task OpenHoliday()
         {
-            return OpenInBrowser("https://mojpracovnycas.sk/download/dovolenka.pdf");
+            return DisplayAlert("Chyba!", "Tento súbor nie je momentálne dostupný!", "Ok");
         }
         
         private Task OpenTimeSheet()
         {
-            return OpenInBrowser("https://mojpracovnycas.sk/download/pracovny_vykaz.pdf");
+            return ExtractDocument("pracovny_vykaz.pdf");
+        }
+
+        private async Task ExtractDocument(string name)
+        {
+            var path = System.IO.Path.Combine(_extractPath, name);
+
+            bool result;
+            try
+            {
+                result = await FileExtractor.Extract($"Prezencka.{name}", path);
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Kritická chyba!", "Súbor nebol uložený kvôli neznámej chybe!", "Ok");
+                return;
+            }
+
+            if (result)
+                await DisplayAlert("Úspech!", $"Súbor {name} bol úspešne uložený!", "Ok");
+            else
+                await DisplayAlert("Chyba!", $"Nepodarilo sa uložiť súbor {name}. Sú potrebné práva k súborom.", "Ok");
         }
     }
 }

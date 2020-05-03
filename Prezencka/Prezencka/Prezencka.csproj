@@ -13,10 +13,12 @@
 
   <ItemGroup>
     <None Remove="pracovny_vykaz.pdf" />
+    <None Remove="priepustka.pdf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="pracovny_vykaz.pdf" />
+    <EmbeddedResource Include="priepustka.pdf" />
   </ItemGroup>
 
   <ItemGroup>
