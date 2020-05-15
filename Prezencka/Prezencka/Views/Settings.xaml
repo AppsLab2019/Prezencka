@@ -57,34 +57,63 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
+        <StackLayout Grid.ColumnSpan="2"
+                     Orientation="Horizontal">
+            <Label
+                Text="Meno a priezvisko:"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                TextColor="Black"
+                FontSize="20"/>
+
+            <Entry
+                Text="{Binding Name}"
+                Placeholder="Jožko Mrkvička"
+                PlaceholderColor="Olive"
+                HorizontalOptions="EndAndExpand"
+                ClearButtonVisibility="WhileEditing"
+                ReturnType="Done"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1"
+                     Grid.ColumnSpan="2"
+                     Orientation="Horizontal">
+            <Label
+                Text="Osobné číslo:"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                TextColor="Black"
+                FontSize="20"/>
+
+            <Entry
+                Placeholder="007"
+                Text="{Binding Id}"
+                PlaceholderColor="Olive"
+                HorizontalOptions="EndAndExpand"
+                ClearButtonVisibility="WhileEditing"
+                ReturnType="Done"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2"
+                     Grid.ColumnSpan="2"
+                     Orientation="Horizontal">
+            <Label
+                Text="Firma:"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                TextColor="Black"
+                FontSize="20"/>
+
+            <Entry
+                Placeholder="Firma a.s."
+                PlaceholderColor="Olive"
+                Text="{Binding Company}"
+                HorizontalOptions="EndAndExpand"
+                ClearButtonVisibility="WhileEditing"
+                ReturnType="Done"/>
+        </StackLayout>
+
         <!--#region Label-->
-        
-        <Label
-            Grid.Row="0"
-            Grid.Column="0"
-            Text="Meno a priezvisko:"
-            HorizontalOptions="Start"
-            VerticalOptions="Center"
-            TextColor="Black"
-            FontSize="20"/>
-
-        <Label
-            Grid.Row="1"
-            Grid.Column="0"
-            Text="Osobné číslo:"
-            HorizontalOptions="Start"
-            VerticalOptions="Center"
-            TextColor="Black"
-            FontSize="20"/>
-
-        <Label
-            Grid.Row="2"
-            Grid.Column="0"
-            Text="Firma:"
-            HorizontalOptions="Start"
-            VerticalOptions="Center"
-            TextColor="Black"
-            FontSize="20"/>
 
         <Label
             Grid.Row="3"
@@ -130,37 +159,6 @@
             VerticalOptions="Center"
             TextColor="Black"
             FontSize="20"/>
-        
-        <!--#endregion-->
-        
-        <!--#region Entry-->
-
-        <Entry
-            Grid.Row="0"
-            Grid.Column="1"
-            Text="{Binding Name}"
-            Placeholder="Jožko Mrkvička"
-            PlaceholderColor="Olive"
-            ClearButtonVisibility="WhileEditing"
-            ReturnType="Done"/>
-
-        <Entry
-            Grid.Row="1"
-            Grid.Column="1"
-            Placeholder="007"
-            Text="{Binding Id}"
-            PlaceholderColor="Olive"
-            ClearButtonVisibility="WhileEditing"
-            ReturnType="Done"/>
-
-        <Entry
-            Grid.Row="2"
-            Grid.Column="1"
-            Placeholder="Firma a.s."
-            PlaceholderColor="Olive"
-            Text="{Binding Company}"
-            ClearButtonVisibility="WhileEditing"
-            ReturnType="Done"/>
         
         <!--#endregion-->
         

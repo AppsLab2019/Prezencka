@@ -3,6 +3,7 @@ using Prezencka.Services;
 using Prezencka.Views;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -86,7 +87,10 @@ namespace Prezencka.ViewModels
             if (retrievedInfo is null)
                 WorkDays = new ObservableCollection<WorkDay>();
             else
-                WorkDays = new ObservableCollection<WorkDay>(retrievedInfo);
+            {
+                var reversedInfo = retrievedInfo.OrderByDescending(day => day.Date);
+                WorkDays = new ObservableCollection<WorkDay>(reversedInfo);
+            }
 
             RaisePropertyChanged(nameof(WorkDays));
         }
