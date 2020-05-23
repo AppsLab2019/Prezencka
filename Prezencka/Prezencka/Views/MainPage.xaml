@@ -6,11 +6,23 @@
              xmlns:viewmodels="clr-namespace:Prezencka.ViewModels"
              mc:Ignorable="d"
              x:Class="Prezencka.Views.MainPage"
-             Shell.NavBarIsVisible="false">
+             Shell.NavBarIsVisible="false"
+             Style="{StaticResource Style.Page}">
 
     <ContentPage.BindingContext>
         <viewmodels:MainViewModel/>
     </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Style.Button" TargetType="Button">
+                <Setter Property="Visual" Value="Material"/>
+                <Setter Property="WidthRequest" Value="220"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <Grid 
         Padding="20">
@@ -40,28 +52,22 @@
             HorizontalTextAlignment="Center"/>
 
         <Button
-            Text="PRÍCHOD"
+            Text="Príchod"
             Grid.Row="2"
-            WidthRequest="220"
             Command="{Binding ArriveCommand}"
-            HorizontalOptions="Center"
-            FontSize="30"/>
+            Style="{StaticResource Style.Button}"/>
         
         <Button
-            Text="PRESTÁVKA"
+            Text="Prestávka"
             Grid.Row="3"
-            WidthRequest="220"
             Command="{Binding RestCommand}"
-            HorizontalOptions="Center"
-            FontSize="30"/>
+            Style="{StaticResource Style.Button}"/>
 
         <Button
-            Text="ODCHOD"
+            Text="Odchod"
             Grid.Row="4"
-            WidthRequest="220"
             Command="{Binding LeaveCommand}"
-            HorizontalOptions="Center"
-            FontSize="30"/>
+            Style="{StaticResource Style.Button}"/>
 
         <!--#endregion-->
 

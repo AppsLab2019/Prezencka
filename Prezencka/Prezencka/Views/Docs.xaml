@@ -7,7 +7,8 @@
              mc:Ignorable="d"
              x:Class="Prezencka.Views.Docs"
              Shell.NavBarIsVisible="True"
-             Title="Dokumenty na uloženie">
+             Title="Dokumenty na uloženie"
+             Style="{StaticResource Style.Page}">
 
     <ContentPage.BindingContext>
         <viewmodels:DocsViewModel/>

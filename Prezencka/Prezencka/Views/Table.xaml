@@ -10,7 +10,7 @@
              x:Class="Prezencka.Views.Table"
              x:Name="Root"
              Shell.NavBarIsVisible="false"
-             BackgroundColor="#F0F0F0">
+             Style="{StaticResource Style.Page}">
 
     <ContentPage.BindingContext>
         <vm:TableViewModel/>
@@ -24,8 +24,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Grid BackgroundColor="#B0B0B0"
-                  HeightRequest="60">
+            <Grid HeightRequest="60">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
@@ -43,7 +42,7 @@
 
                 <Label Grid.Column="1"
                        FontSize="30"
-                       TextColor="#D0F0F0F0"
+                       TextColor="White"
                        VerticalOptions="Center"
                        HorizontalOptions="Center"
                        Text="{Binding YearMonth, Converter={StaticResource YearMonthFormatter}}"/>
@@ -65,7 +64,7 @@
                     <DataTemplate x:DataType="m:WorkDay">
                         <StackLayout Padding="6">
                             <Frame Padding="15"
-                                   HasShadow="True">
+                                   Style="{StaticResource Style.Frame}">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>

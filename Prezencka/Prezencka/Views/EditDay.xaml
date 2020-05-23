@@ -7,7 +7,8 @@
              mc:Ignorable="d"
              x:Class="Prezencka.Views.EditDay"
              x:DataType="viewmodels:EditDayViewModel"
-             Shell.ForegroundColor="White">
+             Shell.ForegroundColor="White"
+             Style="{StaticResource Style.Page}">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding BackCommand}"/>
@@ -40,50 +41,58 @@
     <ContentPage.Content>
         <StackLayout Padding="6"
                      Spacing="10">
-            <StackLayout>
-                <Label Text="Príchod:"
+            <Frame Style="{StaticResource Style.Frame}">
+                <StackLayout>
+                    <Label Text="Príchod:"
                        FontSize="Large"/>
 
-                <TimePicker Time="{Binding ArriveTime}"/>
-            </StackLayout>
+                    <TimePicker Time="{Binding ArriveTime}"/>
+                </StackLayout>
+            </Frame>
 
-            <StackLayout>
-                <Label Text="Prestávka:"
+            <Frame Style="{StaticResource Style.Frame}">
+                <StackLayout>
+                    <Label Text="Prestávka:"
                        FontSize="Large"/>
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TimePicker Time="{Binding RestStartTime}"/>
+                        <TimePicker Time="{Binding RestStartTime}"/>
 
-                    <Label Grid.Column="1"
+                        <Label Grid.Column="1"
                            Text="-"
                            FontSize="Large"
                            VerticalOptions="Center"/>
 
-                    <TimePicker Grid.Column="2"
+                        <TimePicker Grid.Column="2"
                                 Time="{Binding RestStopTime}"/>
-                </Grid>
-            </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Frame>
 
-            <StackLayout>
-                <Label Text="Odchod:"
+            <Frame Style="{StaticResource Style.Frame}">
+                <StackLayout>
+                    <Label Text="Odchod:"
                        FontSize="Large"/>
 
-                <TimePicker Time="{Binding LeaveTime}"/>
-            </StackLayout>
+                    <TimePicker Time="{Binding LeaveTime}"/>
+                </StackLayout>
+            </Frame>
 
-            <StackLayout>
-                <Label Text="Komentár:"
+            <Frame Style="{StaticResource Style.Frame}">
+                <StackLayout>
+                    <Label Text="Komentár:"
                        FontSize="Large"/>
 
-                <Editor HeightRequest="100"
+                    <Editor HeightRequest="100"
                         Text="{Binding Comment}"/>
-            </StackLayout>
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

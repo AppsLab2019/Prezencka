@@ -10,4 +10,17 @@
     <Application.MainPage>
         <local:PlaceholderPage/>
     </Application.MainPage>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Style.Page" TargetType="Page">
+                <Setter Property="BackgroundColor" Value="#F0F0F0"/>
+            </Style>
+
+            <Style x:Key="Style.Frame" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="HasShadow" Value="True"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
