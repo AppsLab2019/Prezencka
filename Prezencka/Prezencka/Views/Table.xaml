@@ -9,7 +9,7 @@
              mc:Ignorable="d"
              x:Class="Prezencka.Views.Table"
              x:Name="Root"
-             Shell.NavBarIsVisible="false"
+             Shell.NavBarIsVisible="False"
              Style="{StaticResource Style.Page}">
 
     <ContentPage.BindingContext>
@@ -24,7 +24,8 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Grid HeightRequest="60">
+            <Grid HeightRequest="60"
+                  BackgroundColor="#AEAFB0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
