@@ -13,19 +13,6 @@
         <viewmodels:MainViewModel/>
     </ContentPage.BindingContext>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="Style.Button" TargetType="Button">
-                <Setter Property="Visual" Value="Material"/>
-                <Setter Property="WidthRequest" Value="220"/>
-                <Setter Property="HeightRequest" Value="60"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="CornerRadius" Value="3"/>
-                <Setter Property="BackgroundColor" Value="#AEAFB0" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <Grid 
         Padding="20">
         <Grid.RowDefinitions>

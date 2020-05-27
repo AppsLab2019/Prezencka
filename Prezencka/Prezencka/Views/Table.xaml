@@ -9,7 +9,6 @@
              mc:Ignorable="d"
              x:Class="Prezencka.Views.Table"
              x:Name="Root"
-             Shell.NavBarIsVisible="False"
              Style="{StaticResource Style.Page}">
 
     <ContentPage.BindingContext>
@@ -22,44 +21,36 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ImageButton Source="ic_action_arrow_back.png"
+                         Command="{Binding PreviousMonthCommand}"
+                         Style="{StaticResource Style.TitleImageButton}"/>
+
+            <Label Grid.Column="1"
+                   HorizontalOptions="Center"
+                   Style="{StaticResource Style.TitleLabel}"
+                   Text="{Binding YearMonth, Converter={StaticResource YearMonthFormatter}}"/>
+
+            <ImageButton Grid.Column="2"
+                         Margin="0,0,10,0"
+                         Source="ic_action_arrow_forward.png"
+                         Command="{Binding NextMonthCommand}"
+                         Style="{StaticResource Style.TitleImageButton}"/>
+        </Grid>
+    </Shell.TitleView>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Grid HeightRequest="60"
-                  BackgroundColor="#AEAFB0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                <ImageButton Margin="10,0,0,0"
-                             WidthRequest="32"
-                             HeightRequest="32"
-                             VerticalOptions="Center"
-                             BackgroundColor="#AEAFB0"
-                             CornerRadius="32"
-                             Source="ic_action_arrow_back.png"
-                             Command="{Binding PreviousMonthCommand}"/>
-
-                <Label Grid.Column="1"
-                       FontSize="30"
-                       TextColor="White"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center"
-                       Text="{Binding YearMonth, Converter={StaticResource YearMonthFormatter}}"/>
-
-                <ImageButton Grid.Column="2"
-                             Margin="0,0,10,0"
-                             WidthRequest="32"
-                             HeightRequest="32"
-                             VerticalOptions="Center"
-                             BackgroundColor="#AEAFB0"
-                             CornerRadius="32"
-                             Source="ic_action_arrow_forward.png"
-                             Command="{Binding NextMonthCommand}"/>
-            </Grid>
-
-            <CollectionView Margin="5"
+        <AbsoluteLayout>
+            <CollectionView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="SizeProportional"
+                            Margin="5"
                             ItemsSource="{Binding WorkDays}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="m:WorkDay">
@@ -163,6 +154,24 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </StackLayout>
+
+            <ImageButton AbsoluteLayout.LayoutBounds="0.95,0.95,64,64"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"
+                         Padding="10"
+                         CornerRadius="64"
+                         WidthRequest="64"
+                         HeightRequest="64"
+                         BackgroundColor="Gray"
+                         Source="ic_action_add.png"/>
+
+            <ImageButton AbsoluteLayout.LayoutBounds="0.70,0.95,64,64"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"
+                         Padding="13"
+                         CornerRadius="64"
+                         WidthRequest="64"
+                         HeightRequest="64"
+                         BackgroundColor="Gray"
+                         Source="ic_action_pdf.png"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

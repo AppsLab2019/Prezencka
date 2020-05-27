@@ -9,7 +9,6 @@
        UnselectedColor="White">
 
     <TabBar x:Name="rootBar">
-
         <Tab Title="Domov"
              Icon="home_icon.png">
             <ShellContent ContentTemplate="{DataTemplate views:MainPage}"/>

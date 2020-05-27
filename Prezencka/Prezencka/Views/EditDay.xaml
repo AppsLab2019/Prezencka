@@ -21,20 +21,14 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Label FontSize="30"
-                   VerticalOptions="Center"
-                   TextColor="White"
+            <Label Style="{StaticResource Style.TitleLabel}"
                    Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"/>
 
             <ImageButton Grid.Column="1"
                          Margin="0,0,10,0"
-                         WidthRequest="32"
-                         HeightRequest="32"
-                         VerticalOptions="Center"
-                         BackgroundColor="#AEAFB0"
-                         CornerRadius="32"
                          Source="ic_check.png"
-                         Command="{Binding SaveCommand}"/>
+                         Command="{Binding SaveCommand}"
+                         Style="{StaticResource Style.TitleImageButton}"/>
         </Grid>
     </Shell.TitleView>
 

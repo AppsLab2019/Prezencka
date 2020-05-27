@@ -7,12 +7,19 @@
              mc:Ignorable="d"
              x:Class="Prezencka.Views.Docs"
              Shell.NavBarIsVisible="True"
-             Title="Dokumenty na uloženie"
              Style="{StaticResource Style.Page}">
 
     <ContentPage.BindingContext>
         <viewmodels:DocsViewModel/>
     </ContentPage.BindingContext>
+
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Dokumenty na uloženie"
+                   VerticalOptions="CenterAndExpand"
+                   Style="{StaticResource Style.TitleLabel}"/>
+        </StackLayout>
+    </Shell.TitleView>
     
     <Grid Padding="6">
         <Grid.RowDefinitions>
@@ -24,27 +31,21 @@
         </Grid.RowDefinitions>
 
         <Button
-            Text="PRIEPUSTKA"
             Grid.Row="1"
-            WidthRequest="220"
-            HorizontalOptions="Center"
-            Command="{Binding TicketCommand}"
-            FontSize="30"/>
+            Text="Priepustka"
+            Command="{Binding TicketCommand}" 
+            Style="{StaticResource Style.Button}"/>
 
         <Button
-            Text="DOVOLENKA"
             Grid.Row="2"
-            WidthRequest="220"
-            HorizontalOptions="Center"
+            Text="Dovolenka"
             Command="{Binding HolidayCommand}"
-            FontSize="30"/>
+            Style="{StaticResource Style.Button}"/>
 
         <Button
-            Text="PRÁZDNY PRACOVNÝ VÝKAZ"
             Grid.Row="3"
-            WidthRequest="220"
-            HorizontalOptions="Center"
+            Text="Prázdny pracovný výkaz"
             Command="{Binding TimeSheetCommand}"
-            FontSize="30"/>
+            Style="{StaticResource Style.Button}"/>
     </Grid>
 </ContentPage>
