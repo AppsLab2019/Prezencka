@@ -55,7 +55,7 @@ namespace Prezencka.ViewModels
         {
             if (HasChanged())
             {
-                var discard = await DisplayAlert("Confirmation", "Are you sure you want to discard changes?", "Yes", "No");
+                var discard = await DisplayAlert("Potvrdenie", "Naozaj chcete odísť bez uloženia?", "Áno", "Nie");
 
                 if (!discard)
                     return;
@@ -74,7 +74,7 @@ namespace Prezencka.ViewModels
             _day.Comment = Comment;
 
             await App.WorkDayStore.UpdateAsync(_day);
-            await DisplayAlert("Success", "Information saved successfully!", "Ok");
+            await DisplayAlert("Uložeńe", "Vaše informácie boli úspešne uložené", "Ok");
         }
     }
 }
