@@ -88,7 +88,8 @@
                            Style="{StaticResource Style.Label}"/>
 
                     <TimePicker Grid.Column="1"
-                                Time="{Binding WorkingTime}"/>
+                                Time="{Binding WorkingTime}"
+                                Style="{StaticResource Style.TimePicker}"/>
                 </Grid>
             </Frame>
 
@@ -103,7 +104,8 @@
                            Style="{StaticResource Style.Label}"/>
 
                     <TimePicker Grid.Column="1"
-                                Time="{Binding RestTime}"/>
+                                Time="{Binding RestTime}"
+                                Style="{StaticResource Style.TimePicker}"/>
                 </Grid>
             </Frame>
 
@@ -118,7 +120,8 @@
                            Style="{StaticResource Style.Label}"/>
 
                     <TimePicker Grid.Column="1"
-                                Time="{Binding ArriveTime}"/>
+                                Time="{Binding ArriveTime}"
+                                Style="{StaticResource Style.TimePicker}"/>
                 </Grid>
             </Frame>
 
@@ -133,7 +136,8 @@
                            Style="{StaticResource Style.Label}"/>
 
                     <TimePicker Grid.Column="1"
-                                Time="{Binding RestStartTime}"/>
+                                Time="{Binding RestStartTime}"
+                                Style="{StaticResource Style.TimePicker}"/>
                 </Grid>
             </Frame>
 
@@ -148,7 +152,8 @@
                            Style="{StaticResource Style.Label}"/>
 
                     <TimePicker Grid.Column="1"
-                                Time="{Binding LeaveTime}"/>
+                                Time="{Binding LeaveTime}"
+                                Style="{StaticResource Style.TimePicker}"/>
                 </Grid>
             </Frame>
         </StackLayout>

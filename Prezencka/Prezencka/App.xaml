@@ -45,6 +45,10 @@
                 <Setter Property="BackgroundColor" Value="#AEAFB0"/>
                 <Setter Property="CornerRadius" Value="24"/>
             </Style>
+
+            <Style x:Key="Style.TimePicker" TargetType="TimePicker">
+                <Setter Property="Format" Value="HH:mm"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
