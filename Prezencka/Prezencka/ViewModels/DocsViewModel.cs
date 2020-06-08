@@ -30,7 +30,7 @@ namespace Prezencka.ViewModels
         
         private Task OpenHoliday()
         {
-            return DisplayAlert("Chyba!", "Tento súbor nie je momentálne dostupný!", "Ok");
+            return DisplayAlert("CHYBA!", "Tento súbor nie je momentálne dostupný!", "Ok");
         }
         
         private Task OpenTimeSheet()
@@ -49,14 +49,14 @@ namespace Prezencka.ViewModels
             }
             catch (Exception)
             {
-                await DisplayAlert("Kritická chyba!", "Súbor nebol uložený kvôli neznámej chybe!", "Ok");
+                await DisplayAlert("KRITICKÁ CHYBA!", "Súbor nebol uložený kvôli neznámej chybe!", "Ok");
                 return;
             }
 
             if (result)
-                await DisplayAlert("Úspech!", $"Súbor {name} bol úspešne uložený!", "Ok");
+                await DisplayAlert("ÚSPECH!", $"Súbor {name} bol úspešne uložený!", "Ok");
             else
-                await DisplayAlert("Chyba!", $"Nepodarilo sa uložiť súbor {name}. Sú potrebné práva k súborom.", "Ok");
+                await DisplayAlert("CHYBA!", $"Nepodarilo sa uložiť súbor {name}. Sú potrebné práva k súborom.", "Ok");
         }
     }
 }

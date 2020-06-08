@@ -141,7 +141,7 @@ namespace Prezencka.ViewModels
             if (time == default)
                 return Task.FromResult(true);
 
-            return DisplayAlert("Potvredenie", $"Ste si istý že chcete prepísať následujúci čas? ({time:hh\\:mm})", "Áno", "Nie");
+            return DisplayAlert("POTVRDENIE", $"Ste si istý že chcete prepísať nasledujúci čas? ({time:hh\\:mm})", "Áno", "Nie");
         }
     }
 }

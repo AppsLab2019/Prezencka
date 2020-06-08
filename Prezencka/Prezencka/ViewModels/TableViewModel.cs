@@ -109,8 +109,8 @@ namespace Prezencka.ViewModels
             if (day is null)
                 return;
 
-            var shouldDelete = await DisplayAlert("Confirmation",
-                $"Are you sure you want to delete an entry for {day.Date:dd.MM.yyyy}?", "Yes", "No");
+            var shouldDelete = await DisplayAlert("POTVRDENIE",
+                $"Ste si istý, že chcete zmazať deň {day.Date:dd.MM.yyyy}?", "Áno", "Nie");
 
             if (!shouldDelete)
                 return;

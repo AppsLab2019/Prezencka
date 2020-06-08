@@ -62,7 +62,7 @@ namespace Prezencka.ViewModels
             _settingsSerivce.LeaveTime = LeaveTime;
 
             await _settingsSerivce.FlushSettings();
-            await DisplayAlert("ULOŽENÉ", "Vaše nastavenia boli úspeśne uložené.", "OK");
+            await DisplayAlert("ULOŽENÉ", "Vaše nastavenia boli úspešne uložené.", "OK");
         }
 
         private static bool IsTimeValid()
